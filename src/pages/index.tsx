@@ -1,118 +1,109 @@
 import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import { Nunito } from 'next/font/google'
+import Page from "@/layouts/Page";
+import Hero from "@/components/pages/home-page/hero"
+import Collaborator from "@/components/pages/home-page/collaborator"
+import Shortcut from "@/components/pages/home-page/shortcut"
+import Progress from "@/components/pages/home-page/progress"
+import Blog from "@/components/pages/home-page/blog"
+import Activity from "@/components/pages/home-page/activity"
+import Cta from "@/components/pages/home-page/cta"
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Nunito({ subsets: ['latin'] })
+
+const posts = [
+  {
+    author: 'Arisan Security',
+    title: 'AWS S3 Bucket Exposure',
+    cover: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjG4C_q71uXP3Fi0luwaTS9mGDbCCmljkPTKft8HdqLi5xLhAeG9L70qreUKN2SmhxKOt2k0FuDpI4Ctb0TgAPZdfIGTCxdBzy0190B0tuO4oo5Kb-_PzC1Al2ABXWT1FMi7laVN8eebVfxkNl6RM0AgeIU2cdEfuELEvk-9RzLUmBf6KLIQ74Nkea-Ww/s582/15.png',
+  },
+  {
+    author: 'Arisan Networking',
+    title: 'Macam Threat Actor dalam Keamanan Siber',
+    cover: 'https://lh4.googleusercontent.com/bbk2r9TSjTGu9WvpM2b6UJ9EcoClCrAlMwPhpl__Uf576ICKyz_ue_AEe6yPw_xmEipcYENKm9O-eTzzKBBFUXoobGc9Em2i2Juxw3dhGGT6ZxfUpv9Mhj3oT64U6yWh1kQQspkNz4uPlLFlVQspwhM',
+  },
+  {
+    author: 'Arisan Security',
+    title: 'Pentingnya Kesadaran Keamanan Siber untuk Kesiapan Pertahanan Nasiona',
+    cover: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgvu-p5J44j-_VhuZcrcT5CajP7nMRtUUHIwipPujqeoeIbcXnDMSSf7TXh07PNP3u3fh2wOGLKjTIlJkETuox4gxu0N3ZE5ZWK0p6vAr0tXefYM2sbQSPq9eoNapMOEuX3Ny666XRftw2ZduCoXvwP4P7dtHHHkdq1NO-IZelBevvxF_ZmxNj6HsP6_g/w640-h360/map-indonesia-gold-glitter-map-dark-background.jpg',
+  },
+];
+
+const collabSlideSettings = {
+  dots: true,
+  infinite: false,
+  speed: 500,
+  slidesToShow: 4,
+  slidesToScroll: 4,
+  initialSlide: 0,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        initialSlide: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
+};
+
+
+const CollaboratorFrameCoffee = "/images/framecoffehouse.png"
+const CollaboratorKopilot = "/images/kopilot.png"
+const CollaboratorLkf = "/images/lkf-fti-uksw.png"
+const CollaboratorVolgeist = "/images/volkgeist.png"
+
+const collaborators = [
+  {
+    path: CollaboratorLkf,
+    alt: 'LKF FTI UKSW',
+  },
+  {
+    path: CollaboratorVolgeist,
+    alt: 'Volkgeist',
+  },
+  {
+    path: CollaboratorFrameCoffee,
+    alt: 'Frame Coffe House',
+  },
+  {
+    path: CollaboratorKopilot,
+    alt: 'Kopilot',
+  },
+];
+
 
 export default function Home() {
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/pages/index.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      <Page
+        title={"Arisan Security"}
+        path={"/"}
+      >
+        <Hero />
+        <Collaborator settings={collabSlideSettings} collaborators={collaborators}/>
+        <Shortcut />
+        <Progress />
+        {/*/!* <Projects /> *!/*/}
+        <Blog posts={posts}/>
+        <Activity />
+        <Cta />
+      </Page>
   )
 }
