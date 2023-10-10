@@ -10,7 +10,7 @@ export default function Blog({posts}) {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-0 md:px-12 pb-8 md:pb-0">
                 {
                     posts.map((post, index) => (
-                        <Post data-aos={"fade-up"} data-aos-delay={1000 * index} {...post}/>
+                        <Post data-aos={"fade-up"} data-aos-delay={1000 * index} {...post} key={index}/>
                     ))
                 }
             </div>
