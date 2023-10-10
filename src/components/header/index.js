@@ -18,19 +18,19 @@ const NavigationOverlay = ({ path, showMenu, setShowMenu }) => {
     <div className="absolute top-0 right-0 w-full bg-black bg-opacity-25 h-screen" onClick={closeContainer}>
       <div className={`w-4/5 bg-dark-blue py-12 text-white h-full ease-in-out flex flex-col gap-8 transform duration-75 p-4 ${showContainer ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className="p-2 hover:bg-blue-500 rounded-xl cursor-pointer">
-          <a className={`text-xl ${path === "beranda" ? "text-light-blue px-3 py-2 hover:text-white" : " px-3 py-2"}`} href="/">Beranda</a>
+          <Link className={`text-xl ${path === "beranda" ? "text-light-blue px-3 py-2 hover:text-white" : " px-3 py-2"}`} href="/">Beranda</Link>
         </div>
         <div className="p-2 hover:bg-blue-500 rounded-xl cursor-pointer">
-          <a className={`text-xl ${path === "tentang" ? "text-light-blue px-3 py-2 hover:text-white" : " px-3 py-2"}`} href="/tentang">Tentang</a>
+          <Link className={`text-xl ${path === "tentang" ? "text-light-blue px-3 py-2 hover:text-white" : " px-3 py-2"}`} href="/tentang">Tentang</Link>
         </div>
         <div className="p-2 text-white hover:bg-blue-500 rounded-xl cursor-pointer">
-          <a className="text-xl px-3 py-2" href="https://blog.arisansecurity.id">Blog</a>
+          <Link className="text-xl px-3 py-2" href="https://blog.arisansecurity.id">Blog</Link>
         </div>
         <div className="p-2 text-white hover:bg-blue-500 rounded-xl cursor-pointer">
-          <a className="text-xl px-3 py-2" href="#">Gudang</a>
+          <Link className="text-xl px-3 py-2" href="#">Gudang</Link>
         </div>
         <div className="p-2 text-white hover:bg-blue-500 rounded-xl cursor-pointer">
-          <a className={`text-xl ${path === "hubungi-kami" ? "text-light-blue px-3 py-2" : "hover:text-blue-300 px-3 py-2"}`} href="/hubungi-kami">Kontak</a>
+          <Link className={`text-xl ${path === "hubungi-kami" ? "text-light-blue px-3 py-2" : "hover:text-blue-300 px-3 py-2"}`} href="/hubungi-kami">Kontak</Link>
         </div>
       </div>
     </div>
@@ -79,11 +79,11 @@ const Header = ({ path }) => {
   return (
     <header className={`sticky top-0 bg-dark-blue shadow-md  z-50 w-full px-12 md:px-20 py-0 md:py-4 flex justify-between items-center transform duration-150 ${showHeader? 'translate-y-0' :'-translate-y-full'}`}>
       <div className="block xl:hidden">
-        <a className="text-white px-3 py-2" href="#" onClick={() => setShowMenu(true)}>
+        <button className="text-white px-3 py-2" href="#" onClick={() => setShowMenu(true)}>
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h7" />
           </svg>
-        </a>
+        </button>
         {
           showMenu &&
           <NavigationOverlay path={path} showMenu={showMenu} setShowMenu={setShowMenu} />
