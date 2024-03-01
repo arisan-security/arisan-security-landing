@@ -16,6 +16,16 @@ import {
 } from "react-icons/fa";
 import Page from "@/layouts/Page";
 
+declare global {
+  interface Window {
+      FB:any;
+  }
+  interface Document {
+      twttr:any;
+  }
+}
+
+
 const TentangPage = () => {
 
   const listQuotes = [
@@ -73,6 +83,86 @@ const TentangPage = () => {
   var currentQuote = 0;
   var progressWidth = 0;
 
+  React.useEffect(() => {
+    function setQuote() {
+      document.querySelector(".quote")!.innerHTML =
+        '"' + listQuotes[currentQuote].quote + '"';
+      document.querySelector(".author-name")!.innerHTML =
+        listQuotes[currentQuote].author;
+      tweetQuote();
+    }
+
+    function getRandomQuote() {
+      currentQuote = Math.round(Math.random() * listQuotes.length);
+      setQuote();
+    }
+
+    function changeQuote() {
+      // document.querySelector("blockquote").fadeToggle( "slow", "linear" );
+      if (currentQuote < listQuotes.length - 1) {
+        currentQuote++;
+      } else {
+        currentQuote = 0;
+      }
+      setQuote();
+    }
+
+    document.querySelector(".previous")!.addEventListener("click", function () {
+      if (currentQuote > 0) {
+        currentQuote--;
+      } else {
+        currentQuote = listQuotes.length - 1;
+      }
+      setQuote();
+      progressWidth = 0;
+    });
+
+    document.querySelector(".next")!.addEventListener("click", function () {
+      changeQuote();
+      progressWidth = 0;
+    });
+
+    // document.querySelector(".random").addEventListener("click", function () {
+    //   getRandomQuote();
+    //   progressWidth = 0;
+    // });
+
+    /* Twitter API */
+    document.twttr = (function (d, s, id) {
+      var js,
+        fjs = d.getElementsByTagName(s)[0],
+        t = document.twttr || {};
+      if (d.getElementById(id)) return t;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://platform.twitter.com/widgets.js";
+      fjs.parentNode!.insertBefore(js, fjs);
+
+      t._e = [];
+      t.ready = function (f: any) {
+        t._e.push(f);
+      };
+
+      return t;
+    })(document, "script", "twitter-wjs");
+
+    function tweetQuote() {
+      document
+        .querySelector("#quote-tweet")!
+        .setAttribute(
+          "href",
+          "https://twitter.com/intent/tweet?hashtags=quote,inspiration&text=" +
+          encodeURIComponent(
+            '"' +
+            listQuotes[currentQuote].quote +
+            '" ' +
+            listQuotes[currentQuote].author
+          )
+        );
+    }
+
+    setQuote();
+  }, []);
 
   return (
     <Page title={"Tentang"}  path={"tentang"}>
@@ -115,7 +205,6 @@ const TentangPage = () => {
           <div className="panel-quote">
             <div className="quote-progress"></div>
             <div>
-            
               <blockquote>
                 <p className="quote"></p>
                 <p className="author">
@@ -315,16 +404,16 @@ const TentangPage = () => {
             <div className="flex flex-row gap-4">
               <img className="w-20 h-20 md:w-32 md:h-32" src={jadwalIcon} width={128} height={128}/>
               <div className="flex flex-col items-start text-left">
-                <h2 className="text-xl font-bold">Jadwal Pertemuan</h2>
-                <p>Setiap hari Jumat, di minggu ke-4</p>
-                <p>Pukul: 19:30 WIB - SELESAI</p>
+                <h2 className="text-xl font-bold">Offline Gathering</h2>
+                <p> </p>
+                <p>Informasi selanjutnya dapat dilihat pada kanal sosial media kami</p>
               </div>
             </div>
             <div className="flex flex-row gap-4">
               <img className="w-20 h-20 md:w-32 md:h-32" src={mapIcon} width={128} height={128}/>
               <div className="flex flex-col items-start text-left">
                 <h2 className="text-xl font-bold">Alamat</h2>
-                <p>Jl. Kemiri II, Salatiga, Jawa Tengah, 50711</p>
+                <p>Kedai Humble, Salatiga, Jawa Tengah.</p>
                 <p>Phone: <a href="https://wa.me/6281311113723" style={{color: '#E46C5C'}}>(+62)813-1111-3723</a></p>
                 <p>Email: <a href="mailto:hai@arisansecurity.id" style={{color: '#E46C5C'}}>hai@arisansecurity.id</a></p>
               </div>
@@ -332,8 +421,8 @@ const TentangPage = () => {
           </div>
           <div>
           <div className="mapouter">
-            <div className="gmap_canvas">
-              <iframe width="100%" height="100%" id="gmap_canvas" src="https://maps.google.com/maps?q=VOLKGEIST%20(food,drink,&think)&t=&z=17&ie=UTF8&iwloc=&output=embed" >
+            <div className="w-[100%] h-[50%] md:h-[100%]">
+              <iframe width="100%" height="100%" id="gmap_canvas" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.3244874876127!2d110.49112937500023!3d-7.317398892690685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a786a6f1c1c37%3A0xba49af65df94431f!2sKedai%20Humble!5e0!3m2!1sid!2sid!4v1709282920148!5m2!1sid!2sid" >
                 
               </iframe>
             </div>  
