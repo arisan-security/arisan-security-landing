@@ -135,7 +135,7 @@ const TentangPage = () => {
       if (d.getElementById(id)) return t;
       js = d.createElement(s);
       js.id = id;
-      js.src = "https://platform.twitter.com/widgets.js";
+      js.setAttribute("src", "https://platform.twitter.com/widgets.js");
       fjs.parentNode!.insertBefore(js, fjs);
 
       t._e = [];
