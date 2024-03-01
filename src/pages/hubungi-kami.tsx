@@ -75,7 +75,7 @@ const IndexPage = () => {
   return (
     <main className="">
       <Header path="hubungi-kami" />
-      <section className="min-h-screen pt-24 px-8 md:px-16 bg-gray-100">
+      <section className="min-h-screen pt-20 px-8 md:px-16 bg-gray-100">
         <p className="text-3xl sm:text-4xl lg:text-5xl leading-none font-bold text-gray-900 tracking-tight mb-8">Hubungi Kami</p>
         <div className="grid md:grid-cols-2 md:gap-4">
           <div>
