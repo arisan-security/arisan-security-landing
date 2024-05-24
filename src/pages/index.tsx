@@ -97,12 +97,12 @@ export default function Home() {
         path={"/"}
       >
         <Hero />
-        <Collaborator settings={collabSlideSettings} collaborators={collaborators}/>
         <Shortcut />
         <Progress />
         {/*/!* <Projects /> *!/*/}
         <Blog posts={posts}/>
         <Activity />
+        <Collaborator settings={collabSlideSettings} collaborators={collaborators}/>
         <Cta />
       </Page>
   )

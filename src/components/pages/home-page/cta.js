@@ -1,12 +1,11 @@
+import Image from "next/image";
 import Button from "../../button";
 
 export default function Cta() {
     return (
         <section className="min-h-screen px-8 md:px-32 bg-gray-100 flex items-center snap-start relative">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-24" >
-                {/*<div className="h-96 rounded-xl bg-blue-500">*/}
-
-                {/*</div>*/}
+                <Image src="/images/inspiration-amico.svg" width={520} height={520} alt="Inspiration Amico" className="" />
                 <div>
                     <div className="pb-10">
                         <p className="text-4xl lg:text-3xl leading-none font-bold text-gray-800 tracking-tight mb-8">Menulis Adalah Jendela Ilmu, dari Segala Ilmu</p>
