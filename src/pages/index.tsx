@@ -89,21 +89,28 @@ const collaborators = [
   },
 ];
 
+import React, { useEffect } from 'react';
 
 export default function Home() {
+  useEffect(() => {
+    // Fetch data here
+    const result = fetch('https://jsonplaceholder.typicode.com/posts')
+    console.log(result)
+  }, []);
+
   return (
-      <Page
-        title={"Arisan Security"}
-        path={"/"}
-      >
-        <Hero />
-        <Shortcut />
-        <Progress />
-        {/*/!* <Projects /> *!/*/}
-        <Blog posts={posts}/>
-        <Activity />
-        <Collaborator settings={collabSlideSettings} collaborators={collaborators}/>
-        <Cta />
-      </Page>
-  )
+    <Page
+      title={"Arisan Security"}
+      path={"/"}
+    >
+      <Hero />
+      <Shortcut />
+      <Progress />
+      {/* <Projects /> */}
+      <Blog posts={posts} />
+      <Activity />
+      <Collaborator settings={collabSlideSettings} collaborators={collaborators} />
+      <Cta />
+    </Page>
+  );
 }

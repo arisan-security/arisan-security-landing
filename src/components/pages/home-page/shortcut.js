@@ -8,7 +8,7 @@ export default function Shortcut() {
     return (
         <section className="min-h-screen py-24 md:px-52 px-12 snap-start">
             <div className="" data-aos={"fade-up"} data-aos-offset={"10"}>
-                <h2 className="sm:text-lg sm:leading-snug font-semibold tracking-wide uppercase text-purple-600 mb-3">Jalan Pintas</h2>
+                <h2 className="sm:text-lg sm:leading-snug font-semibold tracking-wide uppercase text-dark-blue mb-3">Jalan Pintas</h2>
                 <p className="text-4xl lg:text-5xl leading-none font-bold text-gray-800 tracking-tight mb-8">Informasi Yang Mungkin Kamu Butuhkan</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-56 h-full gap-8 gap-y-32 md:gap-y-24">
