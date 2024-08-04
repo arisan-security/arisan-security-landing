@@ -170,7 +170,7 @@ const TentangPage = () => {
         className="min-h-screen grid grid-cols-1 md:grid-cols-2 align-baseline"
         style={{ backgroundColor: "rgba(243,243,243, 1)" }}
       >
-        <div className="w-full flex flex-row px-10 xl:px-0 justify-end items-center grid-flow-col">
+        <div className="w-full flex flex-row px-12 md:px-20 pt-[200px] grid-flow-col">
           <div className="block max-w-xl">
             <h2 className="font-semibold text-2xl">Siapa Kami?</h2>
             <br />
@@ -188,7 +188,10 @@ const TentangPage = () => {
             </p>
           </div>
         </div>
-        <div
+        <div className="flex pl-10 pt-[200px]">
+          <iframe className="w-[80%] h-[50%]" src="https://www.youtube.com/embed/aCn8cPgRFHY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+        </div>
+        {/* <div
           className="hidden xl:block w-full grid-flow-col"
           style={{
             backgroundImage: "url(/static/binatang.jpg)",
@@ -196,7 +199,7 @@ const TentangPage = () => {
             backgroundPosition: "right center",
             backgroundRepeat: "no-repeat",
           }}
-        ></div>
+        ></div> */}
       </section>
 
       <section className="py-24 px-8 flex flex-col justify-center items-center">
