@@ -102,6 +102,11 @@ export default function Home() {
     <Page
       title={"Arisan Security"}
       path={"/"}
+      seoProps={{
+        title: "A-Sec | Arisan Security",
+        description: "Secure your journey on the internet",
+        article: false,
+      }}
     >
       <Hero />
       <Shortcut />
