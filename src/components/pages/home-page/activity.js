@@ -1,6 +1,6 @@
 export default function Activity() {
     return (
-        <section className="min-h-screen pt-24 px-8 pb-10 snap-start">
+        <section className="min-h-screen pt-24 px-8 pb-10 snap-start" id="activity-section">
             <div className="text-center">
                 <h2 className="sm:text-lg sm:leading-snug font-semibold tracking-wide uppercase text-red-600 mb-3">Kegiatan Terkini</h2>
                 <p className="text-4xl lg:text-3xl leading-none font-bold text-gray-800 tracking-tight mb-8"></p>

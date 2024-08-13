@@ -41,6 +41,8 @@ const Header = ({ path }) => {
   const [showMenu, setShowMenu] = React.useState(false);
   const [lastScrollY, setLastScrollY] = React.useState(0);
   const [showHeader, setShowHeader] = React.useState(true);
+  const [showBanner, setShowBanner] = React.useState(true);
+
   const [time, setTime] = React.useState(new Date);
   const controllHeader = () => {
     if (typeof window !== 'undefined') { 
@@ -76,31 +78,59 @@ const Header = ({ path }) => {
 
 
   
-  return (
-    <header className={`sticky top-0 bg-dark-blue shadow-md  z-50 w-full px-12 md:px-20 py-0 md:py-4 flex justify-between items-center transform duration-150 ${showHeader? 'translate-y-0' :'-translate-y-full'}`}>
-      <div className="block xl:hidden">
-        <button className="text-white px-3 py-2" href="#" onClick={() => setShowMenu(true)}>
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h7" />
-          </svg>
-        </button>
-        {
-          showMenu &&
-          <NavigationOverlay path={path} showMenu={showMenu} setShowMenu={setShowMenu} />
-        }
-      </div>
-      <Link href="/" className="text-2xl text-white">
-        <img src={'/images/arisansecurity.png'} className="object-contain h-8 md:h-8" alt="Logo Arisan Security" />
-      </Link>
-      <div className="hidden xl:block text-sm">
-        <Link className={` ${path === "beranda" ? "text-light-blue px-3 py-2" : "text-white hover:text-blue-300 px-3 py-2"}`} href="/">Beranda</Link>
-        <Link className={` ${path === "tentang" ? "text-light-blue px-3 py-2" : "text-white hover:text-blue-300 px-3 py-2"}`} href="/tentang">Tentang</Link>
-        <Link className=" text-white hover:text-blue-300 px-3 py-2" href="https://blog.arisansecurity.id">Blog</Link>
-        <Link className=" text-white hover:text-blue-300 px-3 py-2" href="#">Gudang</Link>
-        <Link className={` ${path === "hubungi-kami" ? "text-light-blue px-3 py-2" : "text-white hover:text-blue-300 px-3 py-2"}`} href="/hubungi-kami">Kontak</Link>
-      </div>
+  React.useEffect(() => {
+    const activitySection = document.querySelector('#activity-section');
+    
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setShowBanner(!entry.isIntersecting); // Hide banner when Activity section is in view
+      },
+      { threshold: 0.2 } // Adjust the threshold as needed
+    );
 
-    </header>
+    if (activitySection) {
+      observer.observe(activitySection);
+    }
+
+    return () => {
+      if (activitySection) {
+        observer.unobserve(activitySection);
+      }
+    };
+  }, []);
+
+
+  return (
+    <>
+      <header className={`sticky top-0 bg-dark-blue shadow-md  z-50 w-full px-12 md:px-20 py-0 md:py-4 flex justify-between items-center transform duration-150 ${showHeader? 'translate-y-0' :'-translate-y-full'}`}>
+        <div className="block xl:hidden">
+          <button className="text-white px-3 py-2" href="#" onClick={() => setShowMenu(true)}>
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h7" />
+            </svg>
+          </button>
+          {
+            showMenu &&
+            <NavigationOverlay path={path} showMenu={showMenu} setShowMenu={setShowMenu} />
+          }
+        </div>
+        <Link href="/" className="text-2xl text-white">
+          <img src={'/images/arisansecurity.png'} className="object-contain h-8 md:h-8" alt="Logo Arisan Security" />
+        </Link>
+        <div className="hidden xl:block text-sm">
+          <Link className={` ${path === "beranda" ? "text-light-blue px-3 py-2" : "text-white hover:text-blue-300 px-3 py-2"}`} href="/">Beranda</Link>
+          <Link className={` ${path === "tentang" ? "text-light-blue px-3 py-2" : "text-white hover:text-blue-300 px-3 py-2"}`} href="/tentang">Tentang</Link>
+          <Link className=" text-white hover:text-blue-300 px-3 py-2" href="https://blog.arisansecurity.id">Blog</Link>
+          <Link className=" text-white hover:text-blue-300 px-3 py-2" href="#">Gudang</Link>
+          <Link className={` ${path === "hubungi-kami" ? "text-light-blue px-3 py-2" : "text-white hover:text-blue-300 px-3 py-2"}`} href="/hubungi-kami">Kontak</Link>
+        </div>
+      </header>
+      <div className={`bg-black text-white text-center py-2 sticky top-[40px] md:top-[64px] z-40 ${showBanner ? 'animate-slideUp' : 'animate-slideDown'}`}>
+        <Link href="https://indosecsummit.com/" className="hover:underline" target="_blank">
+        #IndoSec 2024 - Encrypting Indonesia: For a Secure Tomorrow
+        </Link>
+      </div>
+    </>
   )
 }
 

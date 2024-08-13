@@ -19,6 +19,20 @@ const config: Config = {
         "light-blue": "#0097f0",
         "light-grey": "#EBEBEB",
       },
+      keyframes: {
+        slideUp: {
+          '0%': { transform: 'translateY(-100%)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        slideDown: {
+          '0%': { transform: 'translateY(0)', opacity: '1' },
+          '100%': { transform: 'translateY(-100%)', opacity: '0' },
+        },
+      },
+      animation: {
+        slideUp: 'slideUp 0.3s ease-in-out forwards',
+        slideDown: 'slideDown 0.3s ease-in-out forwards',
+      },
     },
   },
   plugins: [],
