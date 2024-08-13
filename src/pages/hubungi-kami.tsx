@@ -5,6 +5,7 @@ import Footer from "../components/footer"
 import Post from "../components/post"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Page from "@/layouts/Page";
 
 const posts = [
   {
@@ -71,10 +72,16 @@ const collaborators = [
 ];
 
 // markup
-const IndexPage = () => {
+const ContactPage = () => {
   return (
-    <main className="">
-      <Header path="hubungi-kami" />
+    <Page 
+      title="Contact"
+      path="hubungi-kami"
+      seoProps={{
+        title: "A-Sec | Connect with us",
+        description: "Keep in touch with us for more knowledge about how to be secure on the internet",
+        article: false,
+      }}>
       <section className="min-h-screen pt-20 px-8 md:px-16 bg-gray-100">
         <p className="text-3xl sm:text-4xl lg:text-5xl leading-none font-bold text-gray-900 tracking-tight mb-8">Hubungi Kami</p>
         <div className="grid md:grid-cols-2 md:gap-4">
@@ -110,8 +117,8 @@ const IndexPage = () => {
           </div>
         </div>
       </section><Footer />
-    </main>
+    </Page>
   )
 }
 
-export default IndexPage
+export default ContactPage

@@ -165,7 +165,12 @@ const TentangPage = () => {
   }, []);
 
   return (
-    <Page title={"Tentang"}  path={"tentang"}>
+    <Page title={"Tentang"}  path={"tentang"} 
+      seoProps={{
+        title: "A-Sec | About us",
+        description: "Know more about arisan security or A-Sec",
+        article: false,
+      }}>
       <section
         className="min-h-screen grid grid-cols-1 md:grid-cols-2 align-baseline"
         style={{ backgroundColor: "rgba(243,243,243, 1)" }}
