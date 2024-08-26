@@ -114,7 +114,7 @@ export default function Home() {
       {/* <Projects /> */}
       <Blog posts={posts} />
       <Activity />
-      <Collaborator settings={collabSlideSettings} collaborators={collaborators} />
+      {/* <Collaborator settings={collabSlideSettings} collaborators={collaborators} /> */}
       <Cta />
     </Page>
   );

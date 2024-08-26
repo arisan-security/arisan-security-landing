@@ -125,9 +125,10 @@ const Header = ({ path }) => {
           <Link className={` ${path === "hubungi-kami" ? "text-light-blue px-3 py-2" : "text-white hover:text-blue-300 px-3 py-2"}`} href="/hubungi-kami">Kontak</Link>
         </div>
       </header>
-      <div className={`bg-black text-white text-center py-2 sticky top-[40px] md:top-[64px] z-40 ${showBanner ? 'animate-slideUp' : 'animate-slideDown'}`}>
+      <div className={`bg-black bg-opacity-80 flex text-white text-left justify-center items-center gap-4 py-2 sticky top-[40px] md:top-[64px] z-40 text-sm md:text-base ${showBanner ? 'animate-slideUp' : 'animate-slideDown'}`}>
+        <img src="/images/indosec-logo-awards.png" alt="logo-indosec" className="w-[120px] md:w-[150px]"/>
         <Link href="https://indosecsummit.com/" className="hover:underline" target="_blank">
-        #IndoSec 2024 - Encrypting Indonesia: For a Secure Tomorrow
+            Encrypting Indonesia: <br /> For a Secure Tomorrowss
         </Link>
       </div>
     </>
