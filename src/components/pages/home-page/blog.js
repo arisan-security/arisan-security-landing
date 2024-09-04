@@ -15,9 +15,7 @@ const stripHtmlAndTruncate = (htmlContent, maxLength) => {
     return decodedText.length > maxLength ? decodedText.slice(0, maxLength).trim() + "..." : decodedText;
   };
 const fetchBlogPosts = async () => {
-    const res = await fetch(
-      `https://www.blogger.com/feeds/2512754821872241729/posts/default?alt=json`
-    );
+    const res = await fetch(`/api/blogger`);
     const data = await res.json();
   
     const posts = data.feed.entry.slice(0,3).map((entry) => {
