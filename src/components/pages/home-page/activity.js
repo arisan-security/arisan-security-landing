@@ -29,7 +29,6 @@ export default function Activity() {
         const filteredPosts = feedData.data.filter(
           (post) => post.media_type !== "VIDEO"
         );
-        console.log(filteredPosts);
         setPosts(filteredPosts);
 
         // Fetch Instagram profile data

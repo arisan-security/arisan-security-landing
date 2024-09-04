@@ -11,24 +11,6 @@ import Cta from "@/components/pages/home-page/cta"
 
 const inter = Nunito({ subsets: ['latin'] })
 
-const posts = [
-  {
-    author: 'Arisan Security',
-    title: 'AWS S3 Bucket Exposure',
-    cover: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjG4C_q71uXP3Fi0luwaTS9mGDbCCmljkPTKft8HdqLi5xLhAeG9L70qreUKN2SmhxKOt2k0FuDpI4Ctb0TgAPZdfIGTCxdBzy0190B0tuO4oo5Kb-_PzC1Al2ABXWT1FMi7laVN8eebVfxkNl6RM0AgeIU2cdEfuELEvk-9RzLUmBf6KLIQ74Nkea-Ww/s582/15.png',
-  },
-  {
-    author: 'Arisan Networking',
-    title: 'Macam Threat Actor dalam Keamanan Siber',
-    cover: 'https://lh4.googleusercontent.com/bbk2r9TSjTGu9WvpM2b6UJ9EcoClCrAlMwPhpl__Uf576ICKyz_ue_AEe6yPw_xmEipcYENKm9O-eTzzKBBFUXoobGc9Em2i2Juxw3dhGGT6ZxfUpv9Mhj3oT64U6yWh1kQQspkNz4uPlLFlVQspwhM',
-  },
-  {
-    author: 'Arisan Security',
-    title: 'Pentingnya Kesadaran Keamanan Siber untuk Kesiapan Pertahanan Nasiona',
-    cover: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgvu-p5J44j-_VhuZcrcT5CajP7nMRtUUHIwipPujqeoeIbcXnDMSSf7TXh07PNP3u3fh2wOGLKjTIlJkETuox4gxu0N3ZE5ZWK0p6vAr0tXefYM2sbQSPq9eoNapMOEuX3Ny666XRftw2ZduCoXvwP4P7dtHHHkdq1NO-IZelBevvxF_ZmxNj6HsP6_g/w640-h360/map-indonesia-gold-glitter-map-dark-background.jpg',
-  },
-];
-
 const collabSlideSettings = {
   dots: true,
   infinite: false,
@@ -92,18 +74,34 @@ const collaborators = [
 import React, { useEffect } from 'react';
 
 export default function Home() {
+  
   useEffect(() => {
-    // Fetch data here
-    const result = fetch('https://jsonplaceholder.typicode.com/posts')
-    console.log(result)
+    const icon = document.getElementById('cta-icon');
+    
+    const handleScroll = () => {
+      document.getElementById('contributor-section')?.scrollIntoView({
+        behavior: 'smooth'
+      });
+    };
+
+    if (icon) {
+      icon.addEventListener('click', handleScroll);
+    }
+
+    return () => {
+      if (icon) {
+        icon.removeEventListener('click', handleScroll);
+      }
+    };
   }, []);
+
 
   return (
     <Page
-      title={"Arisan Security"}
+      title={"Arisan SECurity"}
       path={"/"}
       seoProps={{
-        title: "A-Sec | Arisan Security",
+        title: "A-SEC | Arisan SECurity",
         description: "Secure your journey on the internet",
         article: false,
       }}
@@ -112,7 +110,7 @@ export default function Home() {
       <Shortcut />
       <Progress />
       {/* <Projects /> */}
-      <Blog posts={posts} />
+      <Blog />
       <Activity />
       {/* <Collaborator settings={collabSlideSettings} collaborators={collaborators} /> */}
       <Cta />

@@ -18,6 +18,9 @@ const config: Config = {
         "native-black": "#000000",
         "light-blue": "#0097f0",
         "light-grey": "#EBEBEB",
+        "lapis-lazuli": "#4065A3",
+        "telemagenta": "#D32578", 
+      
       },
       keyframes: {
         slideUp: {
