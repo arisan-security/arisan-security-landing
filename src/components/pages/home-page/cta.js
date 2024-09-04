@@ -3,7 +3,7 @@ import Button from "../../button";
 
 export default function Cta() {
     return (
-        <section className="min-h-screen px-8 md:px-32 bg-gray-100 flex items-center snap-start relative" id="contributor-section">
+        <section className="min-h-screen pb-12 md:pb-0 px-8 md:px-32 bg-gray-100 flex items-center snap-start relative" id="contributor-section">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-24" >
                 <Image src="/images/inspiration-amico.svg" width={520} height={520} alt="Inspiration Amico" className="" />
                 <div>
