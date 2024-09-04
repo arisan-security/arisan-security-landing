@@ -9,7 +9,7 @@ const Footer = () => {
     <div className="bg-dark-blue text-white p-8">
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5">
         <div className="m-4 pl-8">
-          <img src={ArisanSecurityLogo} className="object-contain h-8 md:h-8" alt="Logo Arisan Security" />
+          <img src={ArisanSecurityLogo} className="object-contain h-8 md:h-8" alt="Logo Arisan SECurity" />
         </div>
         <div className="m-4">
           <a href="#" className="block text-sm mb-2 text-white">Kirim Tulisan</a>

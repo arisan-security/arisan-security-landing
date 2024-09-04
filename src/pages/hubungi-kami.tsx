@@ -9,7 +9,7 @@ import Page from "@/layouts/Page";
 
 const posts = [
   {
-    author: 'Arisan Security',
+    author: 'Arisan SECurity',
     title: 'AWS S3 Bucket Exposure',
     cover: 'https://arisansecurity.id/wp-content/uploads/2020/12/aws-logo-amazon-web-services-ico-11562880403an9a3aaryc-300x127.png',
   },
@@ -19,7 +19,7 @@ const posts = [
     cover: 'https://arisansecurity.id/wp-content/uploads/2020/12/png-clipart-computer-application-icons-illustration-internet-icon-computer-network-angle-768x768.png',
   },
   {
-    author: 'Arisan Security',
+    author: 'Arisan SECurity',
     title: 'Pengalaman Sebagai Penetration Tester di PT. Datacomm Diangraha',
     cover: 'https://arisansecurity.id/wp-content/uploads/2020/12/logo-datacomm-300x57.png',
   },
@@ -78,7 +78,7 @@ const ContactPage = () => {
       title="Contact"
       path="hubungi-kami"
       seoProps={{
-        title: "A-Sec | Connect with us",
+        title: "A-SEC | Connect with us",
         description: "Keep in touch with us for more knowledge about how to be secure on the internet",
         article: false,
       }}>

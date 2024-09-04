@@ -24,7 +24,7 @@ export default function Progress() {
                     <p className="text-white">Total anggota dari sabang sampai merauke.</p>
                 </div>
             </div>
-            <div className="absolute -bottom-2 left-0 w-full">
+            <div className="absolute -bottom-1 left-0 w-full">
                 <Wave fill='#0097f0'
                     paused={false}
                     options={{
@@ -36,7 +36,7 @@ export default function Progress() {
                 />
             </div>
             <div className="absolute -bottom-2 left-0 w-full">
-                <Wave fill='#fff'
+                <Wave fill='#f3f4f6'
                     paused={false}
                     options={{
                         height: 20,

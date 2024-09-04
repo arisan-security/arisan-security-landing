@@ -167,8 +167,8 @@ const TentangPage = () => {
   return (
     <Page title={"Tentang"}  path={"tentang"} 
       seoProps={{
-        title: "A-Sec | About us",
-        description: "Know more about arisan security or A-Sec",
+        title: "A-SEC | About us",
+        description: "Know more about Arisan SECurity or A-SEC",
         article: false,
       }}>
       <section
