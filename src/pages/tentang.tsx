@@ -422,7 +422,7 @@ const TentangPage = () => {
               <div className="flex flex-col items-start text-left">
                 <h2 className="text-xl font-bold">Alamat</h2>
                 <p>Kedai Humble, Salatiga, Jawa Tengah.</p>
-                <p>Phone: <a href="https://wa.me/6281311113723" style={{color: '#E46C5C'}}>(+62)813-1111-3723</a></p>
+                <p>Phone: <a href="https://wa.me/6281322678933" style={{color: '#E46C5C'}}>(+62)813-2267-8933</a></p>
                 <p>Email: <a href="mailto:hai@arisansecurity.id" style={{color: '#E46C5C'}}>hai@arisansecurity.id</a></p>
               </div>
             </div>
