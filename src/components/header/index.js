@@ -18,7 +18,7 @@ const NavigationOverlay = ({ path, showMenu, setShowMenu }) => {
     <div className="absolute top-0 right-0 w-full bg-black bg-opacity-25 h-screen" onClick={closeContainer}>
       <div className={`w-4/5 bg-dark-blue py-12 text-white h-full ease-in-out flex flex-col gap-8 transform duration-75 p-4 ${showContainer ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className="p-2 hover:bg-blue-500 rounded-xl cursor-pointer">
-          <Link className={`text-xl ${path === "beranda" ? "text-light-blue px-3 py-2 hover:text-white" : " px-3 py-2"}`} href="/">Beranda</Link>
+          <Link className={`text-xl ${path === "/" ? "text-light-blue px-3 py-2 hover:text-white" : " px-3 py-2"}`} href="/">Beranda</Link>
         </div>
         <div className="p-2 hover:bg-blue-500 rounded-xl cursor-pointer">
           <Link className={`text-xl ${path === "tentang" ? "text-light-blue px-3 py-2 hover:text-white" : " px-3 py-2"}`} href="/tentang">Tentang</Link>
@@ -26,9 +26,9 @@ const NavigationOverlay = ({ path, showMenu, setShowMenu }) => {
         <div className="p-2 text-white hover:bg-blue-500 rounded-xl cursor-pointer">
           <Link className="text-xl px-3 py-2" href="https://blog.arisansecurity.id">Blog</Link>
         </div>
-        <div className="p-2 text-white hover:bg-blue-500 rounded-xl cursor-pointer">
+        {/* <div className="p-2 text-white hover:bg-blue-500 rounded-xl cursor-pointer">
           <Link className="text-xl px-3 py-2" href="#">Gudang</Link>
-        </div>
+        </div> */}
         <div className="p-2 text-white hover:bg-blue-500 rounded-xl cursor-pointer">
           <Link className={`text-xl ${path === "hubungi-kami" ? "text-light-blue px-3 py-2" : "hover:text-blue-300 px-3 py-2"}`} href="/hubungi-kami">Kontak</Link>
         </div>
@@ -118,10 +118,10 @@ const Header = ({ path }) => {
           <img src={'/images/arisansecurity.png'} className="object-contain h-8 md:h-8" alt="Logo Arisan SECurity" />
         </Link>
         <div className="hidden xl:block text-sm">
-          <Link className={` ${path === "beranda" ? "text-light-blue px-3 py-2" : "text-white hover:text-blue-300 px-3 py-2"}`} href="/">Beranda</Link>
+          <Link className={` ${path === "/" ? "text-light-blue px-3 py-2" : "text-white hover:text-blue-300 px-3 py-2"}`} href="/">Beranda</Link>
           <Link className={` ${path === "tentang" ? "text-light-blue px-3 py-2" : "text-white hover:text-blue-300 px-3 py-2"}`} href="/tentang">Tentang</Link>
           <Link className=" text-white hover:text-blue-300 px-3 py-2" href="https://blog.arisansecurity.id">Blog</Link>
-          <Link className=" text-white hover:text-blue-300 px-3 py-2" href="#">Gudang</Link>
+          {/* <Link className=" text-white hover:text-blue-300 px-3 py-2" href="#">Gudang</Link> */}
           <Link className={` ${path === "hubungi-kami" ? "text-light-blue px-3 py-2" : "text-white hover:text-blue-300 px-3 py-2"}`} href="/hubungi-kami">Kontak</Link>
         </div>
       </header>
