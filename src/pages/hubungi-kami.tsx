@@ -116,7 +116,7 @@ const ContactPage = () => {
               </div>
           </div>
         </div>
-      </section><Footer />
+      </section>
     </Page>
   )
 }
