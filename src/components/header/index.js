@@ -51,7 +51,6 @@ const Header = ({ path }) => {
       } else { // if scroll up show the navbar
         setShowHeader(true);  
       }
-      console.log(window.screenY)
       // remember current page location to use in the next move
       setLastScrollY(window.scrollY); 
     }
@@ -71,7 +70,6 @@ const Header = ({ path }) => {
     setInterval(() => {
       setTime(new Date());
   }, 1 * 1000) 
-  // console.log(time.toLocaleTimeString());
   })
 
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };

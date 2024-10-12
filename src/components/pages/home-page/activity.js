@@ -1,39 +1,19 @@
 import { useEffect, useState } from "react";
 import { FaLocationPin } from "react-icons/fa6";
+import { client } from "@/utils/sanity"; // Sanity client
 
-const fetchInstagramFeed = async () => {
-  const res = await fetch(
-    `https://graph.instagram.com/me/media?fields=id,caption,media_url,permalink,media_type&access_token=${process.env.NEXT_PUBLIC_INSTAGRAM_ACCESS_TOKEN}`
-  );
-  const data = await res.json();
-  return data;
-};
-
-const fetchInstagramProfile = async () => {
-  const res = await fetch(
-    `https://graph.instagram.com/me?fields=id,username,account_type,media_count&access_token=${process.env.NEXT_PUBLIC_INSTAGRAM_ACCESS_TOKEN}`
-  );
-  const data = await res.json();
-  return data;
-};
-
-export default function Activity() {
+export default function Activity(){
   const [posts, setPosts] = useState([]);
-  const [profile, setProfile] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Fetch Instagram posts and filter out Reels (VIDEO type)
-        const feedData = await fetchInstagramFeed();
-        const filteredPosts = feedData.data.filter(
-          (post) => post.media_type !== "VIDEO"
-        );
-        setPosts(filteredPosts);
-
-        // Fetch Instagram profile data
-        const profileData = await fetchInstagramProfile();
-        setProfile(profileData); // Log the profile data
+        const response = await fetch("/api/instagram");
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const postsData = await response.json();
+        setPosts(postsData);
       } catch (error) {
         console.error("Error fetching Instagram data:", error);
       }
@@ -43,10 +23,7 @@ export default function Activity() {
   }, []);
 
   return (
-    <section
-      className="min-h-screen pt-10 md:pt-24 px-8 pb-24 snap-start"
-      id="activity-section"
-    >
+    <section className="min-h-screen pt-10 md:pt-24 px-8 pb-24 snap-start" id="activity-section">
       <div className="text-center">
         <h2 className="sm:text-lg sm:leading-snug font-semibold tracking-wide uppercase text-red-600 mb-3">
           Kegiatan Terkini
@@ -60,7 +37,7 @@ export default function Activity() {
             <img
               src="/images/indosec-logo-awards.png" // Update with your logo path
               alt="Indosec Summit 2024"
-              className="md:;w-full md:max-w-md w-4/5 h-auto flex"
+              className="md:w-full md:max-w-md w-4/5 h-auto flex"
             />
             <div className="flex flex-row items-center md:gap-2 gap-1">
               <p className="text-white font-extrabold text-[32px] md:text-[56px] md:leading-[40px] ">
@@ -91,10 +68,7 @@ export default function Activity() {
               opportunities that often forge successful collaborations between
               cybersecurity solution providers and public & private
               organisations...
-              <a
-                href="https://indosecsummit.com/"
-                className="text-blue-400 pl-2"
-              >
+              <a href="https://indosecsummit.com/" className="text-blue-400 pl-2">
                 learn more
               </a>
             </p>
@@ -103,7 +77,7 @@ export default function Activity() {
       </div>
 
       <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-4 mt-12 px-0 md:px-24">
-        {posts.slice(0, 3).map((post) => {
+        {posts.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()).slice(0, 3).map((post) => {
           const maxLength = 150;
           const truncatedCaption =
             post.caption.length > maxLength
@@ -115,26 +89,22 @@ export default function Activity() {
               key={post.id}
               className="flex flex-col border border-gray-200 rounded-lg overflow-hidden shadow-md"
             >
-              <a
-                href={post.permalink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={post.permalink} target="_blank" rel="noopener noreferrer">
                 <div className="w-full aspect-square">
                   <img
                     className="object-cover w-full h-full object-left-top"
-                    src={post.media_url}
-                    alt={post.truncatedCaption}
+                    src={post.thumbnailUrl}
+                    alt={truncatedCaption}
                   />
                 </div>
               </a>
               <div className="p-4 bg-white">
                 <div className="flex items-center mb-2">
                   <span className="font-extrabold text-black">
-                    {profile.username}
+                    {post.user.username}
                   </span>
                 </div>
-                <p className="">
+                <p>
                   {truncatedCaption}
                   {post.caption.length > maxLength && (
                     <a
