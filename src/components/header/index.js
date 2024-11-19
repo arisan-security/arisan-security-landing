@@ -1,5 +1,6 @@
 import * as React from "react"
 import Link from "next/link";
+import LanguageSwitch from "../button/languageSwitch";
 const NavigationOverlay = ({ path, showMenu, setShowMenu }) => {
   const [showContainer, setShowContainer] = React.useState(false);
   React.useEffect(() => {
@@ -100,7 +101,7 @@ const Header = ({ path }) => {
 
   return (
     <>
-      <header className={`sticky top-0 bg-dark-blue shadow-md  z-50 w-full px-12 md:px-20 py-0 md:py-4 flex justify-between items-center transform duration-150 ${showHeader? 'translate-y-0' :'-translate-y-full'}`}>
+      <header className={`fixed top-0 bg-opacity-80 backdrop-blur-md shadow-md z-50 w-full px-44 md:px-[15vw] py-0 md:py-4 flex justify-between items-center transform duration-150 ${showHeader? 'translate-y-0' :'-translate-y-full'}`}>
         <div className="block xl:hidden">
           <button className="text-white px-3 py-2" href="#" onClick={() => setShowMenu(true)}>
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -122,13 +123,14 @@ const Header = ({ path }) => {
           {/* <Link className=" text-white hover:text-blue-300 px-3 py-2" href="#">Gudang</Link> */}
           <Link className={` ${path === "hubungi-kami" ? "text-light-blue px-3 py-2" : "text-white hover:text-blue-300 px-3 py-2"}`} href="/hubungi-kami">Kontak</Link>
         </div>
+        <LanguageSwitch />
       </header>
-      <div className={`bg-black bg-opacity-80 flex text-white text-left justify-center items-center gap-4 py-2 sticky top-[40px] md:top-[64px] z-40 text-sm md:text-base ${showBanner ? 'animate-slideUp' : 'animate-slideDown'}`}>
+      {/* <div className={`bg-black bg-opacity-80 flex text-white text-left justify-center items-center gap-4 py-2 sticky top-[40px] md:top-[64px] z-40 text-sm md:text-base ${showBanner ? 'animate-slideUp' : 'animate-slideDown'}`}>
         <img src="/images/indosec-logo-awards.png" alt="logo-indosec" className="w-[120px] md:w-[150px]"/>
         <Link href="https://indosecsummit.com/" className="hover:underline" target="_blank">
             Encrypting Indonesia: <br /> For a Secure Tomorrow
         </Link>
-      </div>
+      </div> */}
     </>
   )
 }

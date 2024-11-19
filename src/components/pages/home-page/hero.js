@@ -1,16 +1,19 @@
+/* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
-
 export default function Hero() {
     return (
-        <section className="min-h-screen py-24 md:px-20 px-12 md:pt-0 grid grid-cols-1 md:grid-cols-2 align-baseline snap-start bg-[url(/images/hero-background.jpg)] bg-cover">
-            <div className="my-auto" data-aos={"fade-left"}>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl leading-none font-extrabold text-gray-700 tracking-tight mb-8">Pecahkan kode &amp; bersama merubah dunia!</h2>
-                <p className="text-lg font-thin lg:text-lg  text-gray-600 tracking-tight mb-8">Arisan SECurity (A-SEC) adalah wadah untuk berbicara seputar Information Technology, terkhusus pada bidang Information Technology Security. Kami sangat amat terbuka bagi semua kalangan &amp; Elemen masyarakat untuk bukan hanya sekedar berkolaborasi melainkan berelaborasi.</p>
+        <section className="min-h-screen flex items-center relative bg-dark-blue px-[15vw] text-white overflow-hidden">
+            <div className="absolute z-0 h-full w-[70vw]">
+                <img src={'/images/hero_background.png'} alt='hero image' className="min-w-[792px] min-h-[920px] bottom-[-400px] right-[-200px] absolute object-cover"/>
             </div>
-            <div className="hidden md:flex justify-center items-center px-0 md:px-12 py-0 mt-4 md:mt-0 md:py-24" data-aos={"zoom-in"}>
-                <Image src="/images/world-cuate.svg" alt="World Cuate SVG" width={540} height={540}/>
-                {/* <img src="/images/world-cuate.svg" alt="World Cuate SVG" className="w-[540px] h-[100%]" /> */}
-                {/* <iframe className="w-[28rem] h-[18rem]" src="https://www.youtube.com/embed/aCn8cPgRFHY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> */}
+            <div className="flex flex-col gap-4 !z-10" data-aos={"fade-left"}>
+                <h2 className="text-3xl sm:text-[40px] lg:text-[50px] leading-[4rem] font-extrabold tracking-tight mb-8">Pecahkan kode <br /> dam bersama <span className="bg-black bg-opacity-60 rounded-lg px-4">merubah dunia!</span></h2>
+                <p className="text-lg font-thin lg:text-lg tracking-tight mb-8 md:w-[30vw]">Arisan SECurity (A-SEC) adalah wadah untuk berbicara seputar Information Technology, terkhusus pada bidang Information Technology Security. Kami sangat amat terbuka bagi semua kalangan &amp; Elemen masyarakat untuk bukan hanya sekedar berkolaborasi melainkan berelaborasi.</p>
+                <a href="">
+                    <div className="text-white border-white border-solid border rounded-3xl py-2 mx-2 max-w-xs text-center">
+                        Pelajari Selengakpanya
+                    </div>
+                </a>
             </div>
         </section>
     )

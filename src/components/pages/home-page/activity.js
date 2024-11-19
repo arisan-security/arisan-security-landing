@@ -57,7 +57,7 @@ export default function Activity(){
 
           {/* Right Side: Event Explanation */}
           <div className="flex-1 p-8">
-            <h2 className="text-2xl md:text-3xl font-bold text-lapis-lazuli mb-4 text-white">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">
               Indosec Awards 2024
             </h2>
             <p className="text-md md:text-xl text-white mb-4 text-justify">

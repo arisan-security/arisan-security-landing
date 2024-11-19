@@ -34,10 +34,6 @@ export default function Home() {
     };
   }, []);
 
-  // useEffect(() => {
-  //   readDataFrom
-  // }, []);
-
 
   return (
     <Page

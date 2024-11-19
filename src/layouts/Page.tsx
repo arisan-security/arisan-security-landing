@@ -17,11 +17,13 @@ type PageProps = {
 
 export default function Page({ children, title, path, seoProps }: PageProps) {
   return (
-    <div className="">
+    <>
       <SEO {...seoProps} />
-      <Header path={path || '#'} />
-      <main>{children}</main>
+      <main className="relative">
+        <Header path={path || '#'} />
+        {children}
+      </main>
       <Footer />
-    </div>
+    </>
   );
 }
