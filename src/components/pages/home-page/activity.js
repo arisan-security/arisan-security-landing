@@ -86,14 +86,14 @@ export default function Activity(){
 
           return (
             <div
-              key={post.id}
+              key={post.postId}
               className="flex flex-col border border-gray-200 rounded-lg overflow-hidden shadow-md"
             >
               <a href={post.permalink} target="_blank" rel="noopener noreferrer">
                 <div className="w-full aspect-square">
                   <img
                     className="object-cover w-full h-full object-left-top"
-                    src={post.thumbnailUrl}
+                    src={post.imageUrl}
                     alt={truncatedCaption}
                   />
                 </div>
@@ -101,7 +101,7 @@ export default function Activity(){
               <div className="p-4 bg-white">
                 <div className="flex items-center mb-2">
                   <span className="font-extrabold text-black">
-                    {post.user.username}
+                    {post.publisher.username}
                   </span>
                 </div>
                 <p>

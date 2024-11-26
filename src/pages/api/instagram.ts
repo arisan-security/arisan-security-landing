@@ -28,8 +28,9 @@ interface InstagramPost {
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
-    const query = '*[_type == "instagramPost"]{_id, postId, caption, createdAt, user{userId, fullName, username, profilePicUrl}, hashtags, images[]{url, width, height}, thumbnailUrl}';
+    const query = '*[_type == "instagramPost"]{_id, postId, caption, createdAt, permalink, publisher{fullName, username}, hashtags, "imageUrl": image.asset->url}';
     const posts: InstagramPost[] = await client.fetch(query);
+    console.log(posts);
     res.status(200).json(posts);
   } catch (error) {
     console.error("Error fetching posts:", error);
