@@ -1,4 +1,5 @@
 import Button from "../../button"
+import UniversalCard from "@/components/cards/UniversalCard"
 
 const Acast =  "/images/a-cast.png"
 const LintasTaksa =  "/images/lintas-taksa.png"
@@ -6,13 +7,16 @@ const SawalaMangkus =  "/images/sawala-mangkus.png"
 
 export default function Shortcut() {
     return (
-        <section className="min-h-screen py-24 md:px-52 px-12 snap-start">
-            <div className="" data-aos={"fade-up"} data-aos-offset={"10"}>
+        <section className="min-h-screen py-24 md:px-[15vw] px-12 snap-start">
+            <div className="text-center" data-aos={"fade-up"} data-aos-offset={"10"}>
                 <h2 className="sm:text-lg sm:leading-snug font-semibold tracking-wide uppercase text-dark-blue mb-3">Jalan Pintas</h2>
-                <p className="text-4xl lg:text-5xl leading-none font-bold text-gray-800 tracking-tight mb-8">Informasi Yang Mungkin Kamu Butuhkan</p>
+                <p className="text-4xl  leading-none font-bold text-gray-800 tracking-tight mb-8">Informasi Yang Mungkin Kamu Butuhkan</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-56 h-full gap-8 gap-y-32 md:gap-y-24">
-                <div className="rounded-2xl min-w-full shadow-sm bg-blue-400 p-4 pb-8 text-white relative" data-aos={"fade-up"} data-aos-delay="500">
+                <UniversalCard imgUrl="/images/sawala-mangkus.png"/>
+                <UniversalCard imgUrl="/images/lintas-taksa.png"/>
+                <UniversalCard imgUrl="/images/a-cast.png"/>
+                {/* <div className="rounded-2xl min-w-full shadow-sm bg-blue-400 p-4 pb-8 text-white relative" data-aos={"fade-up"} data-aos-delay="500">
                     <div className="h-40 relative">
                         <img alt="Sawala Mangkus" className="absolute bottom-4 w-full h-80 object-contain animate-wiggle" src={SawalaMangkus} />
                     </div>
@@ -47,7 +51,7 @@ export default function Shortcut() {
                             <Button>Selengkapnya</Button>
                         </a>
                     </div>
-                </div>
+                </div> */}
             </div>
         </section>
     )

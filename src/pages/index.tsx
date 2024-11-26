@@ -46,8 +46,8 @@ export default function Home() {
       }}
     >
       <Hero />
-      <Shortcut />
       <Progress />
+      <Shortcut />
       {/* <Projects /> */}
       <Blog />
       <Activity />

@@ -101,7 +101,7 @@ const Header = ({ path }) => {
 
   return (
     <>
-      <header className={`fixed top-0 bg-opacity-80 backdrop-blur-md shadow-md z-50 w-full px-44 md:px-[15vw] py-0 md:py-4 flex justify-between items-center transform duration-150 ${showHeader? 'translate-y-0' :'-translate-y-full'}`}>
+      <header className={`fixed top-0 bg-dark-blue bg-opacity-20 backdrop-blur-md shadow-md z-50 w-full px-44 md:px-[15vw] py-0 md:py-4 flex justify-between items-center transform duration-150 ${showHeader? 'translate-y-0' :'-translate-y-full'}`}>
         <div className="block xl:hidden">
           <button className="text-white px-3 py-2" href="#" onClick={() => setShowMenu(true)}>
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

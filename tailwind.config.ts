@@ -17,6 +17,8 @@ const config: Config = {
         "dark-blue": "#11005C",
         "light-grey": "#EBEBEB",
         "absolute-blue": "#070027",
+        "light-purple": "#A590FF",
+        "white-purple": "#F2EFFF",
         "native-black": "#000000",
         "light-blue": "#0288D9",
         "lapis-lazuli": "#4065A3",
