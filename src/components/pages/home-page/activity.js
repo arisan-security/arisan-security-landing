@@ -35,41 +35,31 @@ export default function Activity(){
           {/* Left Side: Big Logo */}
           <div className="flex-1 flex flex-col justify-center items-center mb-8 md:mb-0">
             <img
-              src="/images/indosec-logo-awards.png" // Update with your logo path
+              src="/images/ctf-dr-web.jpeg" // Update with your logo path
               alt="Indosec Summit 2024"
-              className="md:w-full md:max-w-md w-4/5 h-auto flex"
+              className="w-full h-auto flex"
             />
-            <div className="flex flex-row items-center md:gap-2 gap-1">
-              <p className="text-white font-extrabold text-[32px] md:text-[56px] md:leading-[40px] ">
-                24-25
-              </p>
-              <p className="text-white text-[12px] md:text-[18px]">
-                Sept <br /> 2024
-              </p>
-              <div className="border-l-2 border-red-500 border-solid mx-1 h-[18px]"></div>
-              <FaLocationPin className="text-white text-[20px] self-start mt-2" />
-              <p className="text-white font-semibold text-[14px] md:text-[18px] mt-2">
-                Jakarta Convention Center, <br />
-                Indonesia
-              </p>
-            </div>
           </div>
 
           {/* Right Side: Event Explanation */}
           <div className="flex-1 p-8">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">
-              Indosec Awards 2024
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-1">
+              CTF Dr.WEB 2024 
             </h2>
-            <p className="text-md md:text-xl text-white mb-4 text-justify">
-              IndoSec is Indonesia’s largest and most renowned cybersecurity
-              event that facilitates knowledge sharing sessions on the most
-              pressing topics and a stellar showcase of the latest cybersecurity
-              solutions. It provides the ideal setting for great networking
-              opportunities that often forge successful collaborations between
-              cybersecurity solution providers and public & private
-              organisations...
+            <hr />
+            <p className="text-md md:text-lg mt-4 text-white mb-4 text-justify">
+              Dr.WEB kembali mencari bakat terbaik di dunia keamanan siber lho! 🛡 <br />
+              Ikuti kompetisi Capture The Flag (CTF) dari 2 - 15 Desember 2024 dan buktikan kemampuan kamu dalam reverse engineering & analisis file. 💻 <br /> <br />
+              🎯 Cara Bermain: <br /> <br />
+              Selesaikan 16 tantangan untuk capture the {"\"flag\""} dan kumpulkan poin terbanyak. Pemain tercepat akan mendapatkan poin tambahan! <br /><br />
+
+              🏆 Hadiah:<br />
+              🎁 Lisensi Dr.WEB Security Space (1 tahun) untuk semua peserta<br />
+              🎁 Hadiah spesial untuk 20 pemain terbaik<br />
+
+              ✍️ Pendaftaran sudah dibuka! 
               <a href="https://indosecsummit.com/" className="text-blue-400 pl-2">
-                learn more
+                Yuk daftar sekarang!
               </a>
             </p>
           </div>
