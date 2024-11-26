@@ -58,7 +58,7 @@ export default function Activity(){
               🎁 Hadiah spesial untuk 20 pemain terbaik<br />
 
               ✍️ Pendaftaran sudah dibuka! 
-              <a href="https://indosecsummit.com/" className="text-blue-400 pl-2">
+              <a href="https://ctf-indonesia.dev.drweb.com" className="text-blue-400 pl-2">
                 Yuk daftar sekarang!
               </a>
             </p>
