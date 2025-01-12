@@ -19,7 +19,7 @@ export default function Home() {
     
     const handleScroll = () => {
       document.getElementById('contributor-section')?.scrollIntoView({
-        behavior: 'smooth'
+        behavior: 'smooth' 
       });
     };
 

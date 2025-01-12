@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { MdKeyboardDoubleArrowDown } from "react-icons/md";
+import PostCard from '@/components/cards/PostCard'
 
 const stripHtmlAndTruncate = (htmlContent, maxLength) => {
     const tempDiv = document.createElement("div");
@@ -55,54 +56,61 @@ export default function BlogPosts() {
   }, []);
 
   return (
-    <section className="min-h-[80vh] pt-12 mt-[-30px] md:mt-0 md:pt-0 px-8 pb-10 snap-start bg-gray-100" id="blog-section">
-  <div className="text-center" data-aos={"fade-up"}>
-    <h2 className="sm:text-lg sm:leading-snug font-semibold tracking-wide uppercase text-red-600 mb-3">Blog</h2>
-    <p className="text-2xl lg:text-3xl leading-none font-bold text-gray-800 tracking-tight mb-4 relative inline-block">
-      Buah Pena Dari Kontributor
-    </p>
-  </div>
-
-  <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-8 mt-12 px-0 md:px-24">
-    {posts.map((post, index) => {
-      const imageUrl = post.imageUrl || '/default-image.jpg'; 
-
-      return (
-        <div key={index} className="flex flex-col border border-gray-200 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
-          <a href={post.url} target="_blank" rel="noopener noreferrer">
-            <div className="w-full aspect-video">
-              <img className="object-cover w-full h-full object-fill" src={imageUrl} alt={post.title} />
-            </div>
-          </a>
-          <div className="p-6 bg-white">
-            <div className="flex flex-col mb-2">
-              <span>{post.author}</span>
-              <span className="font-[900] text-black text-lg">{post.title}</span>
-            </div>
-            <p className="text-gray-700 mb-4 text-justify">{stripHtmlAndTruncate(post.content, 150)}
-            <a
-                      href={post.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-500 ml-2"
-                    >
-                        <br />
-                      See more
-                    </a>
-            </p>
+    <section className="pt-5 md:px-[15%] pb-12 gap-10 grid grid-flow-col snap-start" id="blog-section">
+      <div className="text-left place-items-start" data-aos={"fade-up"}>
+        <h2 className="sm:text-lg sm:leading-snug font-semibold tracking-wide text-catacean-blue">Blog</h2>
+        <p className="text-2xl lg:text-3xl leading-none font-bold text-catacean-blue tracking-tight mb-4 relative inline-block">
+          Buah Pena Dari Kontributor
+        </p>
+        <div className="mt-10 flex flex-col text-davys-gray" data-aos={"fade-up"}>
+          Ingin menjadi kontributor blog kami? <br /> <span className="font-extrabold">Kirim tulisanmu sekarang!</span>
+            <MdKeyboardDoubleArrowDown id="cta-icon" fontSize={24} className="animate-bounce mt-4 cursor-pointer self-center" />
             
           </div>
-        </div>
+      </div>
+
+  <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-8">
+    {posts.map((post, index) => {
+      const imageUrl = post.imageUrl || '/default-image.jpg'; 
+      return (
+        <PostCard key={index}
+          author={post.author}
+          title={post.title}
+          // description={stripHtmlAndTruncate(post.content, 150)}
+          imgUrl={imageUrl}
+          actionLink={post.url}
+        />
+        // <div key={index} className="flex flex-col border border-gray-200 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+        //   <a href={post.url} target="_blank" rel="noopener noreferrer">
+        //     <div className="w-full aspect-video">
+        //       <img className="object-cover w-full h-full object-fill" src={imageUrl} alt={post.title} />
+        //     </div>
+        //   </a>
+        //   <div className="p-6 bg-white">
+        //     <div className="flex flex-col mb-2">
+        //       <span>{post.author}</span>
+        //       <span className="font-[900] text-black text-lg">{post.title}</span>
+        //     </div>
+        //     <p className="text-gray-700 mb-4 text-justify">{stripHtmlAndTruncate(post.content, 150)}
+        //     <a
+        //               href={post.url}
+        //               target="_blank"
+        //               rel="noopener noreferrer"
+        //               className="text-blue-500 ml-2"
+        //             >
+        //                 <br />
+        //               See more
+        //             </a>
+        //     </p>
+            
+        //   </div>
+        // </div>
       );
     })}
   </div>
 
   {/* Call To Action Button */}
-  <div className="mt-16 text-center flex flex-col justify-center items-center " data-aos={"fade-up"}>
-         Ingin menjadi kontributor blog kami? Kirim tulisanmu sekarang!
-    <MdKeyboardDoubleArrowDown id="cta-icon" fontSize={24} className="animate-bounce mt-4 cursor-pointer" />
-    
-  </div>
+  
 </section>
   );
 }

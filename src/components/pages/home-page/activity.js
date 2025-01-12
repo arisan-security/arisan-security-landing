@@ -23,31 +23,34 @@ export default function Activity(){
   }, []);
 
   return (
-    <section className="min-h-screen pt-10 md:pt-24 px-8 pb-24 snap-start" id="activity-section">
+    <section className="pt-10 px-8 md:px-[15%] snap-start bg-dark-blue" id="activity-section">
       <div className="text-center">
-        <h2 className="sm:text-lg sm:leading-snug font-semibold tracking-wide uppercase text-red-600 mb-3">
+        <h2 className="sm:text-lg sm:leading-snug font-semibold tracking-wide text-white text-[24px] mb-10">
           Kegiatan Terkini
         </h2>
-        <p className="text-4xl lg:text-3xl leading-none font-bold text-gray-800 tracking-tight mb-8"></p>
       </div>
-      <div className="special-collaboration py-16 w-[calc(100%+4rem)] md:w-auto bg-black bg-opacity-80 ml-[-2rem] md:mx-12 md:rounded-md">
+      <div className="special-collaboration pt-5 px-16 w-full pb-24 md:w-auto bg-gradient-to-b bg-opacity-20 md:mt-12 md:rounded-[30px] shadow-inner"
+        style={{
+          backgroundImage: 'linear-gradient(to bottom, rgba(0, 0, 0, .2) 0%, rgba(0, 0, 0, 0) 78%)',
+        }}
+      >
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center">
           {/* Left Side: Big Logo */}
-          <div className="flex-1 flex flex-col justify-center items-center mb-8 md:mb-0">
+          <div className="flex flex-col w-[40%] justify-center items-center mb-8 md:mb-0">
             <img
-              src="/images/ctf-dr-web.jpeg" // Update with your logo path
+              src="/images/ctf-dr-web.jpeg" 
               alt="Indosec Summit 2024"
-              className="w-full h-auto flex"
+              className="w-[80%] h-auto flex"
             />
           </div>
 
           {/* Right Side: Event Explanation */}
-          <div className="flex-1 p-8">
+          <div className="flex-1 px-8 w-[60%]">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-1">
               CTF Dr.WEB 2024 
             </h2>
             <hr />
-            <p className="text-md md:text-lg mt-4 text-white mb-4 text-justify">
+            <p className="text-sm mt-4 text-white mb-4 text-justify">
               Dr.WEB kembali mencari bakat terbaik di dunia keamanan siber lho! 🛡 <br />
               Ikuti kompetisi Capture The Flag (CTF) dari 2 - 15 Desember 2024 dan buktikan kemampuan kamu dalam reverse engineering & analisis file. 💻 <br /> <br />
               🎯 Cara Bermain: <br /> <br />
@@ -66,7 +69,7 @@ export default function Activity(){
         </div>
       </div>
 
-      <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-4 mt-12 px-0 md:px-24">
+      <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-4 px-0 mt-[-3rem]">
         {posts.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()).slice(0, 3).map((post) => {
           const maxLength = 150;
           const truncatedCaption =
@@ -77,7 +80,7 @@ export default function Activity(){
           return (
             <div
               key={post.postId}
-              className="flex flex-col border border-gray-200 rounded-lg overflow-hidden shadow-md"
+              className="flex flex-col border border-gray-200 rounded-b-none rounded-t-[30px] overflow-hidden shadow-md"
             >
               <a href={post.permalink} target="_blank" rel="noopener noreferrer">
                 <div className="w-full aspect-square">
@@ -88,7 +91,7 @@ export default function Activity(){
                   />
                 </div>
               </a>
-              <div className="p-4 bg-white">
+              {/* <div className="p-4 bg-white">
                 <div className="flex items-center mb-2">
                   <span className="font-extrabold text-black">
                     {post.publisher.username}
@@ -107,7 +110,7 @@ export default function Activity(){
                     </a>
                   )}
                 </p>
-              </div>
+              </div> */}
             </div>
           );
         })}

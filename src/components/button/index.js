@@ -21,6 +21,15 @@ const Button = ({variant='filled', children, className=''}) => {
             cursor-pointer 
             shadow-md
         `,
+        'outlined': `
+            border 
+            border-light-white
+            px-8
+            py-2.5 
+            text-center
+            text-white
+            rounded-full   
+        `,
     }
     return (
         <div className={`${className} ${variants[variant]}`}>

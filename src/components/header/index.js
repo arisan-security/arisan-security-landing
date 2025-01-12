@@ -101,9 +101,9 @@ const Header = ({ path }) => {
 
   return (
     <>
-      <header className={`fixed top-0 bg-dark-blue bg-opacity-20 backdrop-blur-md shadow-md z-50 w-full px-44 md:px-[15vw] py-0 md:py-4 flex justify-between items-center transform duration-150 ${showHeader? 'translate-y-0' :'-translate-y-full'}`}>
+      <header className={`fixed top-0 bg-dark-blue bg-opacity-20 backdrop-blur-md z-50 w-full py-4 md:py-4 flex justify-between transform duration-150 ${showHeader? 'translate-y-0' :'-translate-y-full'}`}>
         <div className="block xl:hidden">
-          <button className="text-white px-3 py-2" href="#" onClick={() => setShowMenu(true)}>
+          <button className="text-white ml-4 px-3 py-2" href="#" onClick={() => setShowMenu(true)}>
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h7" />
             </svg>
@@ -113,17 +113,19 @@ const Header = ({ path }) => {
             <NavigationOverlay path={path} showMenu={showMenu} setShowMenu={setShowMenu} />
           }
         </div>
-        <Link href="/" className="text-2xl text-white">
-          <img src={'/images/arisansecurity.png'} className="object-contain h-8 md:h-8" alt="Logo Arisan SECurity" />
-        </Link>
-        <div className="hidden xl:block text-sm">
-          <Link className={` ${path === "/" ? "text-light-blue px-3 py-2" : "text-white hover:text-blue-300 px-3 py-2"}`} href="/">Beranda</Link>
-          <Link className={` ${path === "tentang" ? "text-light-blue px-3 py-2" : "text-white hover:text-blue-300 px-3 py-2"}`} href="/tentang">Tentang</Link>
-          <Link className=" text-white hover:text-blue-300 px-3 py-2" href="https://blog.arisansecurity.id">Blog</Link>
-          {/* <Link className=" text-white hover:text-blue-300 px-3 py-2" href="#">Gudang</Link> */}
-          <Link className={` ${path === "hubungi-kami" ? "text-light-blue px-3 py-2" : "text-white hover:text-blue-300 px-3 py-2"}`} href="/hubungi-kami">Kontak</Link>
+        <div className="mx-auto w-full max-w-[1680px] flex justify-end md:justify-between items-center px-10 md:px-[10%]">
+          <Link href="/" className="text-2xl text-white">
+            <img src={'/images/arisansecurity.png'} className="object-contain h-8" alt="Logo Arisan SECurity" />
+          </Link>
+          <div className="hidden xl:block text-sm">
+            <Link className={` ${path === "/" ? "text-light-blue px-3 py-2" : "text-white hover:text-blue-300 px-3 py-2"}`} href="/">Beranda</Link>
+            <Link className={` ${path === "tentang" ? "text-light-blue px-3 py-2" : "text-white hover:text-blue-300 px-3 py-2"}`} href="/tentang">Tentang</Link>
+            <Link className=" text-white hover:text-blue-300 px-3 py-2" href="https://blog.arisansecurity.id">Blog</Link>
+            {/* <Link className=" text-white hover:text-blue-300 px-3 py-2" href="#">Gudang</Link> */}
+            <Link className={` ${path === "hubungi-kami" ? "text-light-blue px-3 py-2" : "text-white hover:text-blue-300 px-3 py-2"}`} href="/hubungi-kami">Kontak</Link>
+          </div>
         </div>
-        <LanguageSwitch />
+        {/* <LanguageSwitch /> */}
       </header>
       {/* <div className={`bg-black bg-opacity-80 flex text-white text-left justify-center items-center gap-4 py-2 sticky top-[40px] md:top-[64px] z-40 text-sm md:text-base ${showBanner ? 'animate-slideUp' : 'animate-slideDown'}`}>
         <img src="/images/indosec-logo-awards.png" alt="logo-indosec" className="w-[120px] md:w-[150px]"/>

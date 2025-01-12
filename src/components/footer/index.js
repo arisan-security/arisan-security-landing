@@ -6,10 +6,10 @@ const ArisanSecurityLogo = "../../images/arisansecurity.png";
 
 const Footer = () => {
   return (
-    <div className="bg-dark-blue text-white p-8">
+    <div className="bg-rich-black text-white p-8 md:px-[10%] max-w-[1680px] mx-auto border-t-[1px] relative">
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5">
-        <div className="m-4 pl-8">
-          <img src={ArisanSecurityLogo} className="object-contain h-8 md:h-8" alt="Logo Arisan SECurity" />
+        <div className="my-4">
+          <img src={ArisanSecurityLogo} className="object-contain h-8 md:h-16" alt="Logo Arisan SECurity" />
         </div>
         <div className="m-4">
           <a href="#" className="block text-sm mb-2 text-white">Kirim Tulisan</a>
@@ -21,7 +21,7 @@ const Footer = () => {
           <a href="/syarat-dan-ketentuan" className="block text-sm mb-2 text-white">Syarat dan Ketentuan</a>
         </div>
       </div>
-      <div className="flex w-full items-center justify-center">
+      {/* <div className="flex w-full items-center justify-center">
         <div className="rounded-full p-1 bg-blue-400 mx-1">
           <a href="https://wwsw.facebook.com/ArisanSec/" target={'_blank'}><FaFacebook width={24} /></a>
         </div>
@@ -43,7 +43,8 @@ const Footer = () => {
         <div className="rounded-full p-1 bg-blue-400 mx-1">
           <a href="https://www.youtube.com/channel/UCm2pDFpGl5o4qo3uvXSc2Yw" target={'_blank'}><FaYoutube width={24} /></a>
         </div>
-      </div>
+      </div> */}
+      <div className="absoulte bottom-0 w-full text-white">© 2025 Arisan Security</div>
     </div>
   )
 }

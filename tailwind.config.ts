@@ -3,6 +3,7 @@ import type { Config } from 'tailwindcss'
 const config: Config = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/layouts/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
@@ -15,14 +16,17 @@ const config: Config = {
       },
       colors: {
         "dark-blue": "#11005C",
+        "davys-gray": "#5C5C5C",
+        "catacean-blue": "#0B003A",
         "light-grey": "#EBEBEB",
-        "absolute-blue": "#070027",
+        "rich-black": "#070027",
         "light-purple": "#A590FF",
         "white-purple": "#F2EFFF",
         "native-black": "#000000",
         "light-blue": "#0288D9",
         "lapis-lazuli": "#4065A3",
         "telemagenta": "#D32578", 
+        "abs-rich-black" :"#05001B"
       
       },
       keyframes: {
