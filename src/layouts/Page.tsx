@@ -21,7 +21,7 @@ export default function Page({ children, title, path, seoProps }: PageProps) {
       <SEO {...seoProps} />
       <main className="relative">
         <Header path={path || '#'} />
-        <div className="mx-auto w-full !max-w-[1680px]" >
+        <div className="mx-auto w-full" >
           {children}
         </div>
       </main>

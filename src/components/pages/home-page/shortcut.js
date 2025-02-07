@@ -7,7 +7,7 @@ const SawalaMangkus =  "/images/sawala-mangkus.png"
 
 export default function Shortcut() {
     return (
-        <section className="pt-24 md:px-[15%] mb-20 px-12 snap-start">
+        <section className="pt-24 md:px-[10%] !max-w-[1680px] m-auto mb-20 px-12 snap-start">
             <div className="text-center" data-aos={"fade-up"} data-aos-offset={"10"}>
                 <h2 className="sm:text-lg sm:leading-snug font-semibold tracking-wide uppercase text-dark-blue mb-3">Jalan Pintas</h2>
                 <p className="text-4xl  leading-none font-bold text-gray-800 tracking-tight mb-8">Informasi Yang Mungkin Kamu Butuhkan</p>

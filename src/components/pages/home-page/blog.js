@@ -56,7 +56,7 @@ export default function BlogPosts() {
   }, []);
 
   return (
-    <section className="pt-5 md:px-[15%] pb-12 gap-10 grid grid-flow-col snap-start" id="blog-section">
+    <section className="pt-5 md:px-[10%] !max-w-[1680px] m-auto pb-12 gap-10 grid grid-flow-col snap-start" id="blog-section">
       <div className="text-left place-items-start" data-aos={"fade-up"}>
         <h2 className="sm:text-lg sm:leading-snug font-semibold tracking-wide text-catacean-blue">Blog</h2>
         <p className="text-2xl lg:text-3xl leading-none font-bold text-catacean-blue tracking-tight mb-4 relative inline-block">
