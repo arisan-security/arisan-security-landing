@@ -26,7 +26,8 @@ const config: Config = {
         "light-blue": "#0288D9",
         "lapis-lazuli": "#4065A3",
         "telemagenta": "#D32578", 
-        "abs-rich-black" :"#05001B"
+        "abs-rich-black" :"#05001B",
+        "pixie-powder": "#301997"
       
       },
       keyframes: {
