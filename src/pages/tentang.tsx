@@ -92,7 +92,7 @@ const TentangPage = () => {
         article: false,
       }}>
         <section className="bg-dark-blue">
-          <div className="min-h-[938px] !max-w-[1680px] md:px-[10%] m-auto align-baseline">
+          <div className="min-h-[938px] !max-w-[1440px] md:px-[10%] m-auto align-baseline">
             <div className="w-full grid grid-cols-1 md:grid-cols-2 pt-[250px] md:px-5"
               style={{
                 gridTemplateColumns: '35% auto',
@@ -121,7 +121,7 @@ const TentangPage = () => {
         </section>
     
       <section className="bg-white">
-        <div className="py-24 px-0 !max-w-[1680px] md:px-[10%] m-auto relative grid grid-flow-row grid-cols-2 gap-8" style={{
+        <div className="py-24 px-0 !max-w-[1440px] md:px-[10%] m-auto relative grid grid-flow-row grid-cols-2 gap-8" style={{
           gridTemplateColumns: "45% 55%"
         }}>
           <h2 className="absolute text-2xl font-black top-0 left-1/2 translate-x-[-50%] translate-y-[-50%] bg-pixie-powder px-12 rounded-full py-2 tracking-[4px] uppercase text-white">Napak Tilas</h2>
@@ -177,7 +177,7 @@ const TentangPage = () => {
       </section>
 
       <section className="bg-dark-blue">
-        <div className="py-12 px-4 !max-w-[1680px] md:px-[10%] m-auto flex flex-col w-full justify-center items-center gap-4">
+        <div className="py-12 px-4 !max-w-[1440px] md:px-[10%] m-auto flex flex-col w-full justify-center items-center gap-4">
           <h2 className="text-2xl font-black mb-10 tracking-[4px] uppercase text-white">Program Kami</h2>
           <div className="grid grid-flow-col grid-rows-1 md:grid-flow-row md:grid-cols-3 gap-4 pb-16">
             <ProgramCard

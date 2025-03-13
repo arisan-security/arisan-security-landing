@@ -4,7 +4,7 @@ import Button from "../../button";
 export default function Cta() {
     return (
         <div className="bg-rich-black">
-            <section className="pb-12 px-8 md:px-[10%] !max-w-[1680px] m-auto flex items-start md:py-24 snap-start relative" id="contributor-section">
+            <section className="pb-12 px-8 md:px-[10%] !max-w-[1440px] m-auto flex items-start md:py-24 snap-start relative" id="contributor-section">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-24" >
                     <Image src="/images/inspiration-amico.svg" width={380} height={380} alt="Inspiration Amico" className="place-self-end" />
                     <div>

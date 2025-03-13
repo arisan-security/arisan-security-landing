@@ -24,7 +24,7 @@ export default function Activity(){
 
   return (
     <div className="bg-dark-blue">
-      <section className="pt-10 px-8 md:px-[10%] !max-w-[1680px] m-auto snap-start bg-dark-blue" id="activity-section">
+      <section className="pt-10 px-8 md:px-[10%] !max-w-[1440px] m-auto snap-start bg-dark-blue" id="activity-section">
         <div className="text-center">
           <h2 className="sm:text-lg sm:leading-snug font-semibold tracking-wide text-white text-[24px] mb-10">
             Kegiatan Terkini

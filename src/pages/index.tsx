@@ -15,6 +15,7 @@ import React, { useEffect } from 'react';
 export default function Home() {
   
   useEffect(() => {
+    console.log("huu")
     const icon = document.getElementById('cta-icon');
     
     const handleScroll = () => {

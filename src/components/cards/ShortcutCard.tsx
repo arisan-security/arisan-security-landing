@@ -5,34 +5,36 @@ interface ShortcutCardProps {
   description: string;
   imgUrl: string;
   actionLink: string;
+  imageStyle: {};
 }
 
-const ShortcutCard: React.FC<ShortcutCardProps> = ({ title, description, imgUrl, actionLink }) => {
+const ShortcutCard: React.FC<ShortcutCardProps> = ({ title, description, imgUrl, actionLink, imageStyle }) => {
   return (
     <div
-      className="grid grid-flow-row w-full p-0 bg-white-purple rounded-xl shadow-md"
+      className="grid grid-flow-row w-full p-0 bg-white-purple rounded-3xl shadow-md"
       style={{
-        gridTemplateRows: '170px 150px auto',
+        gridTemplateRows: '200px 250px auto',
       }}
     >
       {/* Image Section */}
-      <div className="w-full h-[150px] relative mb-5 flex items-center justify-center">
+      <div className="w-full h-full relative mb-5 flex items-center justify-center">
         <img
           src={imgUrl}
           alt="content-img"
           className="w-[80%] object-contain absolute bottom-0"
-        />
+          style={imageStyle}
+          />
       </div>
 
       {/* Content Section */}
-      <div className="mx-5 mb-5">
-        <p className="text-[24px] font-extrabold">{title}</p>
-        <h1 className="font-extralight text-[14px] my-3">{description}</h1>
+      <div className="mx-10 ">
+        <p className="text-[30px] font-extrabold">{title}</p>
+        <h1 className="font-extralight text-[18px] my-3 text-balance">{description}</h1>
       </div>
 
       {/* Footer */}
-      <div className="flex flex-row p-5">
-        <a href={actionLink}> Learn more </a>
+      <div className="flex flex-row p-10">
+        <a href={actionLink} className='cursor-pointer underline text-catacean-blue font-bold'> Learn more </a>
       </div>
     </div>
   );

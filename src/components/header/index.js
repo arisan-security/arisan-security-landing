@@ -113,7 +113,7 @@ const Header = ({ path }) => {
             <NavigationOverlay path={path} showMenu={showMenu} setShowMenu={setShowMenu} />
           }
         </div>
-        <div className="mx-auto w-full max-w-[1680px] flex justify-end md:justify-between items-center px-10 md:px-[10%]">
+        <div className="mx-auto w-full max-w-[1440px] flex justify-end md:justify-between items-center px-10 md:px-[10%]">
           <Link href="/" className="text-2xl text-white">
             <img src={'/images/arisansecurity.png'} className="object-contain h-8" alt="Logo Arisan SECurity" />
           </Link>

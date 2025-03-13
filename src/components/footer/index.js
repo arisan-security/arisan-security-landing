@@ -7,7 +7,7 @@ const ArisanSecurityLogo = "../../images/arisansecurity.png";
 const Footer = () => {
   return (
     <div className="bg-rich-black  border-t-[1px] ">
-      <div className="!max-w-[1680px] m-auto text-white p-8 md:px-[10%] mx-autorelative">
+      <div className="!max-w-[1440px] m-auto text-white p-8 md:px-[10%] mx-autorelative">
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5">
           <div className="my-4">
             <img src={ArisanSecurityLogo} className="object-contain h-8 md:h-16" alt="Logo Arisan SECurity" />
