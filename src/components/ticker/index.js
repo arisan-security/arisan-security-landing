@@ -1,28 +1,30 @@
-import React from 'react'
-import CountUp from 'react-countup';
-import VisibilitySensor from 'react-visibility-sensor';
-const Ticker = ({ className, ...rest }) => {
-    const [viewPortEntered, setViewPortEntered] = React.useState(false);
+import React, { useState, useEffect, useRef } from "react";
+import CountUp from "react-countup";
 
-    return (
-        <CountUp {...rest} start={viewPortEntered ? null : 0}>
-            {({ countUpRef }) => {
-                return (
-                    <VisibilitySensor
-                        active={!viewPortEntered}
-                        onChange={isVisible => {
-                            if (isVisible) {
-                                setViewPortEntered(true);
-                            }
-                        }}
-                        delayedCall
-                    >
-                        <h4 className={''} ref={countUpRef} />
-                    </VisibilitySensor>
-                );
-            }}
-        </CountUp>
+const Ticker = ({ className, ...rest }) => {
+  const [hasStarted, setHasStarted] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setHasStarted(true);
+        }
+      },
+      { threshold: 0.5 }
     );
+
+    if (ref.current) observer.observe(ref.current);
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <h4 className={className} ref={ref}>
+      <CountUp {...rest} start={hasStarted ? 0 : undefined} />
+    </h4>
+  );
 };
 
 export default Ticker;
