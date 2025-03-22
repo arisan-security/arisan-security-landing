@@ -114,7 +114,7 @@ const TentangPage = () => {
                 </p>
               </div>
               <div className="flex mt-5 w-full overflow-hidden rounded-2xl">
-                <iframe className="w-full" src="https://www.youtube.com/embed/aCn8cPgRFHY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                <iframe className="w-full" src="https://www.youtube.com/embed/aCn8cPgRFHY?playlist=aCn8cPgRFHY&loop=1&rel=0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
               </div>
             </div>
           </div>
