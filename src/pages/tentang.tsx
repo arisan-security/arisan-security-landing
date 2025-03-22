@@ -91,34 +91,34 @@ const TentangPage = () => {
         description: "Know more about Arisan SECurity or A-SEC",
         article: false,
       }}>
-        <section className="bg-dark-blue">
-          <div className="min-h-[938px] !max-w-[1440px] md:px-[10%] m-auto align-baseline">
-            <div className="w-full grid grid-cols-1 md:grid-cols-2 pt-[250px] md:px-5"
-              style={{
-                gridTemplateColumns: '35% auto',
-              }}>
-              <div className="block max-w-xl text-white pr-5">
-                <h2 className="font-semibold text-[40px]">Siapa Kami?</h2>
-                <br />
-                <p className="text-md leading-normal">
-                  Kami adalah komunitas nirlaba yang berorientasi pada peradaban
-                  Teknologi Informasi, terutama pada bidang Information Technology
-                  Security.
-                </p>
-                <br />
-                <p className="text-md leading-normal">
-                  Kami melakukan berbagai aktivitas demi menyokong anggota kami
-                  untuk bisa berkontribusi dalam siklus ekosistem Teknologi
-                  Informasi, khususnya sektor keamanan siber Indonesia secara
-                  berkelanjutan.
-                </p>
-              </div>
-              <div className="flex mt-5 w-full overflow-hidden rounded-2xl">
-                <iframe className="w-full" src="https://www.youtube.com/embed/aCn8cPgRFHY?playlist=aCn8cPgRFHY&loop=1&rel=0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-              </div>
+      <section className="bg-dark-blue">
+        <div className="min-h-[938px] !max-w-[1440px] md:px-[10%] m-auto align-baseline">
+          <div className="w-full grid grid-cols-1 md:grid-cols-2 pt-[250px] md:px-5"
+            style={{
+              gridTemplateColumns: '35% auto',
+            }}>
+            <div className="block max-w-xl text-white pr-5">
+              <h2 className="font-semibold text-[40px]">Siapa Kami?</h2>
+              <br />
+              <p className="text-md leading-normal">
+                Kami adalah komunitas nirlaba yang berorientasi pada peradaban
+                Teknologi Informasi, terutama pada bidang Information Technology
+                Security.
+              </p>
+              <br />
+              <p className="text-md leading-normal">
+                Kami melakukan berbagai aktivitas demi menyokong anggota kami
+                untuk bisa berkontribusi dalam siklus ekosistem Teknologi
+                Informasi, khususnya sektor keamanan siber Indonesia secara
+                berkelanjutan.
+              </p>
+            </div>
+            <div className="flex mt-5 w-full overflow-hidden rounded-2xl">
+              <iframe className="w-full" src="https://www.youtube.com/embed/aCn8cPgRFHY?playlist=aCn8cPgRFHY&loop=1&rel=0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
     
       <section className="bg-white">
         <div className="py-24 px-0 !max-w-[1440px] md:px-[10%] m-auto relative grid grid-flow-row grid-cols-2 gap-8" style={{
