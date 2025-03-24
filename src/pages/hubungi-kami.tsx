@@ -85,14 +85,14 @@ const ContactPage = () => {
       <section className="bg-dark-blue">
         <div className="min-h-[938px] !max-w-[1440px] md:px-[10%] m-auto align-baseline">
           <div className="w-full pt-[250px] md:px-5">
-            <div className="bg-white grid grid-cols-1 md:grid-cols-2"
+            <div className="bg-white grid grid-cols-1 md:grid-cols-2 text-dark-blue w-full overflow-hidden rounded-2xl p-10 bg-[#D9D9D9]"
             style={{
               gridTemplateColumns: '35% auto',
             }}>
-              <div className="block max-w-xl pr-5">
+              <div className="block max-w-xl pr-5 m-5">
                 <h2 className="font-semibold text-[40px]">Hubungi Kami</h2>
                 <br />
-                <p className="text-md leading-normal">
+                <p className="text-lg text-justify mb-10">
                   Kami terbuka serta mendukung
                   segala pihak yang ingin bekerjasama
                   dengan kami demi membangun
@@ -100,31 +100,31 @@ const ContactPage = () => {
                   terkhusus dalam dunia Teknologi
                   Informasi & Kemanan Siber.
                 </p>
-                <a href="https://s.id/arisansecurity" target="_blank" className="rounded-full border bg-blue-800 shadow-lg text-white px-6 py-2">Lihat Portal Kami</a>
+                <a href="https://s.id/arisansecurity" target="_blank" className="text-[#6947FF] font-semibold underline">Portal Kami</a>
               </div>
-              <div className="flex mt-5 w-full overflow-hidden rounded-2xl">
+              <div className="flex m-5">
                 <div className="grid md:grid-cols-2 md:gap-4">
                   <div>
                     <form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
                       <input type="hidden" name="form-name" value="contact" />
                       <div className="mt-4">
-                        <label className="">Nama</label> <br/>
+                        <label className="font-semibold">Nama</label> <br/>
                         <input className="px-2 py-2 mt-2 w-full shadow-sm rounded-md outline-none" name="name" placeholder="Nama lengkap"/>
                       </div>
                       <div className="mt-4">
-                        <label className="">Surat Elektronik</label> <br/>
+                        <label className="font-semibold">Surat Elektronik</label> <br/>
                         <input className="px-2 py-2 mt-2 w-full shadow-sm rounded-md outline-none" name="email" placeholder="Alamat Surel"/>
                       </div>
                       <div className="mt-4">
-                        <label className="">Nomor Telepon</label> <br/>
+                        <label className="font-semibold">Nomor Telepon</label> <br/>
                         <input className="px-2 py-2 mt-2 w-full shadow-sm rounded-md outline-none" name="phone" placeholder="Nomor Telepon"/>
                       </div>
                       <div className="mt-4">
-                        <label className="">Pesan</label> <br/>
+                        <label className="font-semibold">Pesan</label> <br/>
                         <textarea className="px-2 py-2 mt-2 w-full shadow-sm rounded-md outline-none" name="message" placeholder="Pesan"/>
                       </div>
-                      <div className="mt-4 mb-8 text-right">
-                        <button type="submit" className="rounded-md bg-blue-800 shadow-lg text-white px-6 py-2">Kirim</button>
+                      <div className="mt-4 text-right">
+                        <button type="submit" className="rounded-full bg-dark-blue shadow-lg text-white px-16 py-1 mt-6">Kirim</button>
                       </div>
                     </form>
                   </div>
