@@ -1,9 +1,17 @@
 import React, { useState, useEffect, useRef } from "react";
-import CountUp from "react-countup";
+import CountUp, { CountUpProps } from "react-countup";
 
-const Ticker = ({ className, ...rest }) => {
+export interface TickerProps extends CountUpProps {
+  className?: string;
+}
+
+/**
+ * Ticker component: animated number counter using react-countup.
+ * Starts animation when visible in viewport.
+ */
+const Ticker: React.FC<TickerProps> = ({ className = "", ...rest }) => {
   const [hasStarted, setHasStarted] = useState(false);
-  const ref = useRef(null);
+  const ref = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(

@@ -1,7 +1,8 @@
+import React from "react";
 import Wave from "react-wavify";
 import Ticker from "../../ticker";
 
-export default function Progress() {
+const Progress: React.FC = () => {
     return (
         <div className="bg-rich-black">
             <section className="px-4 md:px-[10%] py-16 md:py-24 flex items-start content-center !max-w-[1440px] m-auto snap-start relative">
@@ -27,5 +28,7 @@ export default function Progress() {
                 </div>
             </section>
         </div>
-    )
-}
+    );
+};
+
+export default Progress;

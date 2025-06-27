@@ -1,4 +1,6 @@
-export default function Projects() {
+import React from "react";
+
+const Projects: React.FC = () => {
     return (
         <section className="min-h-screen py-12 px-8 snap-start">
             <div className="mb-12" data-aos={"fade-up"}>
@@ -23,5 +25,7 @@ export default function Projects() {
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
+
+export default Projects;

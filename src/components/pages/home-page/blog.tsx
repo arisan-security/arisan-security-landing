@@ -1,13 +1,21 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { MdKeyboardDoubleArrowDown } from "react-icons/md";
-import PostCard from '@/components/cards/PostCard'
+import PostCard from '@/components/cards/PostCard';
 
-const stripHtmlAndTruncate = (htmlContent, maxLength) => {
+interface BlogPost {
+  author: string;
+  title: string;
+  content: string;
+  url: string;
+  imageUrl: string | null;
+}
+
+const stripHtmlAndTruncate = (htmlContent: string, maxLength: number): string => {
     const tempDiv = document.createElement("div");
     tempDiv.innerHTML = htmlContent;
     let plainText = tempDiv.textContent || tempDiv.innerText || "";
   
-    const decodeHtmlEntities = (str) => {   
+    const decodeHtmlEntities = (str: string) => {   
       return str.replace(/&[a-zA-Z0-9#]+;/g, "");
     };
   
@@ -15,17 +23,17 @@ const stripHtmlAndTruncate = (htmlContent, maxLength) => {
   
     return decodedText.length > maxLength ? decodedText.slice(0, maxLength).trim() + "..." : decodedText;
   };
-const fetchBlogPosts = async () => {
+const fetchBlogPosts = async (): Promise<BlogPost[]> => {
     const res = await fetch(`/api/blogger`);
     const data = await res.json();
   
-    const posts = data.feed.entry.slice(0,3).map((entry) => {
+    const posts = data.feed.entry.slice(0,3).map((entry: any) => {
       const author = entry.author[0].name.$t;
       const content = entry.content.$t; 
       const title = entry.title.$t; 
-      const url = entry.link.find((link) => link.rel === "alternate").href; 
+      const url = entry.link.find((link: any) => link.rel === "alternate").href; 
       
-      const imageUrl = content.match(/<img.*?src="(.*?)"/)?.[1] || null;
+      const imageUrl = content.match(/<img.*?src=\"(.*?)\"/)?.[1] || null;
 
       return {
         author,
@@ -39,8 +47,8 @@ const fetchBlogPosts = async () => {
     return posts; 
   };
 
-export default function BlogPosts() {
-  const [posts, setPosts] = useState([]);
+const BlogPosts: React.FC = () => {
+  const [posts, setPosts] = useState<BlogPost[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -98,7 +106,8 @@ export default function BlogPosts() {
           })}
         </div>
       </div>
-  {/* Call To Action Button */}
     </section>
   );
-}
+};
+
+export default BlogPosts;

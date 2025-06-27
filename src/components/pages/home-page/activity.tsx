@@ -1,9 +1,18 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaLocationPin } from "react-icons/fa6";
-import { client } from "@/utils/sanity"; // Sanity client
+import { client } from "@/utils/sanity";
 
-export default function Activity(){
-  const [posts, setPosts] = useState([]);
+interface InstagramPost {
+  postId: string;
+  caption: string;
+  imageUrl: string;
+  permalink: string;
+  publisher: { username: string };
+  createdAt: string;
+}
+
+const Activity: React.FC = () => {
+  const [posts, setPosts] = useState<InstagramPost[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -18,8 +27,7 @@ export default function Activity(){
         console.error("Error fetching Instagram data:", error);
       }
     };
-
-    fetchData(); // Call the async function
+    fetchData();
   }, []);
 
   return (
@@ -44,7 +52,6 @@ export default function Activity(){
                 className="w-[80%] h-auto flex"
               />
             </div>
-
             {/* Right Side: Event Explanation */}
             <div className="flex-1 px-8 md:w-[60%]">
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-1">
@@ -56,11 +63,9 @@ export default function Activity(){
                 Ikuti kompetisi Capture The Flag (CTF) dari 2 - 15 Desember 2024 dan buktikan kemampuan kamu dalam reverse engineering & analisis file. 💻 <br /> <br />
                 🎯 Cara Bermain: <br /> <br />
                 Selesaikan 16 tantangan untuk capture the {"\"flag\""} dan kumpulkan poin terbanyak. Pemain tercepat akan mendapatkan poin tambahan! <br /><br />
-
                 🏆 Hadiah:<br />
                 🎁 Lisensi Dr.WEB Security Space (1 tahun) untuk semua peserta<br />
                 🎁 Hadiah spesial untuk 20 pemain terbaik<br />
-
                 ✍️ Pendaftaran sudah dibuka! 
                 <a href="https://ctf-indonesia.dev.drweb.com" className="text-blue-400 pl-2">
                   Yuk daftar sekarang!
@@ -69,7 +74,6 @@ export default function Activity(){
             </div>
           </div>
         </div>
-
         <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-4 px-0 mt-[-3rem]">
           {posts.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()).slice(0, 3).map((post) => {
             const maxLength = 150;
@@ -77,7 +81,6 @@ export default function Activity(){
               post.caption.length > maxLength
                 ? post.caption.substring(0, maxLength) + "..."
                 : post.caption;
-
             return (
               <div
                 key={post.postId}
@@ -119,4 +122,6 @@ export default function Activity(){
       </section>
     </div>
   );
-}
+};
+
+export default Activity;

@@ -1,7 +1,8 @@
+import React from "react";
 import Image from "next/image";
 import Button from "../../button";
 
-export default function Cta() {
+const Cta: React.FC = () => {
     return (
         <div className="bg-rich-black">
             <section className="pb-12 px-8 md:px-[10%] !max-w-[1440px] m-auto flex items-start md:py-24 snap-start relative" id="contributor-section">
@@ -25,5 +26,7 @@ export default function Cta() {
                 </div>
             </section>
         </div>
-    )
-}
+    );
+};
+
+export default Cta;

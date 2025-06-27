@@ -4,11 +4,11 @@ interface ShortcutCardProps {
   title: string;
   description: string;
   imgUrl: string;
-  actionLink: string;
+  contentUrl: string;
   imageStyle: {};
 }
 
-const ShortcutCard: React.FC<ShortcutCardProps> = ({ title, description, imgUrl, actionLink, imageStyle }) => {
+const ShortcutCard: React.FC<ShortcutCardProps> = ({ title, description, imgUrl, contentUrl, imageStyle }) => {
   return (
     <div
       className="flex flex-col w-full bg-white-purple rounded-3xl shadow-md min-h-[420px] h-full"
@@ -31,7 +31,7 @@ const ShortcutCard: React.FC<ShortcutCardProps> = ({ title, description, imgUrl,
 
       {/* Footer */}
       <div className="flex flex-row p-6 md:p-10 mt-auto">
-        <a href={actionLink} className='cursor-pointer underline text-catacean-blue font-bold' target="_blank" rel="noopener noreferrer"> Learn more </a>
+        <a href={contentUrl} className='cursor-pointer underline text-catacean-blue font-bold' target="_blank" rel="noopener noreferrer"> Learn more </a>
       </div>
     </div>
   );
