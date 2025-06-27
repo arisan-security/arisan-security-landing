@@ -184,20 +184,17 @@ const TentangPage = () => {
               img={Bertumbuh}
               title="BERTumbuh"
               description="Saling belajar bersama dalam pengembangan pengetahuan setiap anggota komunitas agar semakin dewasa dalam berpikir komprehensif serta menjadi pribadi yang kompeten di dalam bidang IT terkhususnya IT Security."
-            >
-            </ProgramCard>
+            />
             <ProgramCard
               img={Bergerak}
               title="BERgerak"
               description="Memacu kreativitas dan implementasi anggota komunitas dari hasil pertukaran informasi lini digital di bidang IT terkhususnya IT Security, agar terlihat jelas bukti konkret pengaplikasian teori yang didapatkan."
-            >
-            </ProgramCard>
+            />
             <ProgramCard
               img={Berdampak}
               title="BERDampak"
               description="Membuahkan dampak positif dari setiap hasil implementasi pergerakan yang dilakukan serta memastikan selalu dapat bermanfaat bagi sesama anggota komunitas, para IT Enthusiast, bahkan sampai ke masyarakat."
-            >
-            </ProgramCard>
+            />
           </div>
         </div>
       </section>
