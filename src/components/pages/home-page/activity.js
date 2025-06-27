@@ -24,20 +24,20 @@ export default function Activity(){
 
   return (
     <div className="bg-dark-blue">
-      <section className="pt-10 px-8 md:px-[10%] !max-w-[1440px] m-auto snap-start bg-dark-blue" id="activity-section">
+      <section className="pt-10 px-8 md:px-[10%] max-w-[1440px] 2xl:max-w-[1680px] m-auto snap-start bg-dark-blue" id="activity-section">
         <div className="text-center">
           <h2 className="sm:text-lg sm:leading-snug font-semibold tracking-wide text-white text-[24px] mb-10">
             Kegiatan Terkini
           </h2>
         </div>
-        <div className="special-collaboration pt-5 px-16 w-full pb-24 md:w-auto bg-gradient-to-b bg-opacity-20 md:mt-12 md:rounded-[30px] shadow-inner"
+        <div className="special-collaboration pt-5 md:px-16 w-full pb-24 md:w-auto bg-gradient-to-b bg-opacity-20 md:mt-12 md:rounded-[30px] shadow-inner"
           style={{
             backgroundImage: 'linear-gradient(to bottom, rgba(0, 0, 0, .2) 0%, rgba(0, 0, 0, 0) 78%)',
           }}
         >
           <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center">
             {/* Left Side: Big Logo */}
-            <div className="flex flex-col w-[40%] justify-center items-center mb-8 md:mb-0">
+            <div className="hidden md:flex flex-col w-[40%] justify-center items-center mb-8 md:mb-0">
               <img
                 src="/images/ctf-dr-web.jpeg" 
                 alt="Indosec Summit 2024"
@@ -46,7 +46,7 @@ export default function Activity(){
             </div>
 
             {/* Right Side: Event Explanation */}
-            <div className="flex-1 px-8 w-[60%]">
+            <div className="flex-1 px-8 md:w-[60%]">
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-1">
                 CTF Dr.WEB 2024 
               </h2>

@@ -25,28 +25,6 @@ export default function Progress() {
                         <div className="flex items-start md:items-center text-white h-full ">Total penghargaan dari pihak Swasta maupun Pemerintah.</div>
                     </div>
                 </div>
-                {/* <div className="absolute -bottom-1 left-0 w-full">
-                    <Wave fill='#0097f0'
-                        paused={false}
-                        options={{
-                            height: 20,
-                            amplitude: 60,
-                            speed: 0.15,
-                            points: 3
-                        }}
-                    />
-                </div>
-                <div className="absolute -bottom-2 left-0 w-full">
-                    <Wave fill='#fff'
-                        paused={false}
-                        options={{
-                            height: 20,
-                            amplitude: 60,
-                            speed: 0.15,
-                            points: 3
-                        }}
-                    />
-                </div> */}
             </section>
         </div>
     )

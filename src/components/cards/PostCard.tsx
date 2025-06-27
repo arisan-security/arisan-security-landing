@@ -10,10 +10,7 @@ interface PostCardProps {
 const PostCard: React.FC<PostCardProps> = ({ title, author, imgUrl, actionLink}) => {
   return (
     <div
-      className="grid grid-flow-row min-h-[300px] md:w-[unset] p-0 bg-white-purple rounded-xl shadow-md overflow-hidden"
-      style={{
-        gridTemplateRows: '140px 140px auto',
-      }}
+      className="grid grid-flow-row grid-template-rows:120px_80px_20px min-h-[240px] md:[grid-template-rows:140px_140px_auto] md:min-h-[280px] md:w-[unset] p-0 bg-white-purple rounded-xl shadow-md overflow-hidden"
     >
       {/* Image Section */}
       <div className="w-full h-[120px] relative mb-5 flex items-center justify-center overflow-hidden">
@@ -25,7 +22,7 @@ const PostCard: React.FC<PostCardProps> = ({ title, author, imgUrl, actionLink})
       </div>
 
       {/* Content Section */}
-      <div className="mx-5 mb-5">
+      <div className="mx-5 mb-5 h-[80px] md:h-unset ">
         <h3 className="font-medium text-[12px] mb-2">{author}</h3>
         <p className="text-[12px] font-extrabold">{title}</p>
       </div>
