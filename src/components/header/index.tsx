@@ -74,26 +74,30 @@ const Header: React.FC<HeaderProps> = ({ path }) => {
 
   return (
     <header className={`fixed w-full z-50 transition-all duration-300 ${showHeader ? 'top-0' : '-top-24'}`}>
-      <nav className="bg-dark-blue flex items-center justify-between px-4 py-2">
-        <div className="flex items-center gap-2">
-          <Link href="/">
-            <Image src="/images/arisansecurity.png" alt="Arisan Security Logo" width={120} height={32} className="h-8 w-auto" priority />
-          </Link>
+      <nav className="bg-dark-blue">
+        <div className="flex items-center justify-between max-w-[1440px] mx-auto px-4 md:px-[5%] py-3 relative">
+          <div className="flex items-center gap-2">
+            <Link href="/">
+              <Image src="/images/arisansecurity.png" alt="Arisan Security Logo" width={120} height={32} className="h-8 w-auto" priority />
+            </Link>
+          </div>
+          <div className="hidden md:flex gap-6 items-center absolute left-1/2 -translate-x-1/2">
+            <Link className={`text-white hover:text-light-blue px-3 py-2 ${path === "/" ? "font-bold" : ""}`} href="/">Beranda</Link>
+            <Link className={`text-white hover:text-light-blue px-3 py-2 ${path === "tentang" ? "font-bold" : ""}`} href="/tentang">Tentang</Link>
+            <Link className="text-white hover:text-light-blue px-3 py-2" href="https://blog.arisansecurity.id" target="_blank" rel="noopener noreferrer">Blog</Link>
+            <Link className={`text-white hover:text-light-blue px-3 py-2 ${path === "hubungi-kami" ? "font-bold" : ""}`} href="/hubungi-kami">Kontak</Link>
+          </div>
+          <div className="hidden md:flex items-center">
+            <LanguageSwitch />
+          </div>
+          <button
+            className="md:hidden text-white focus:outline-none"
+            aria-label="Toggle menu"
+            onClick={() => setShowMenu(!showMenu)}
+          >
+            <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="18" x2="21" y2="18" /></svg>
+          </button>
         </div>
-        <div className="hidden md:flex gap-6 items-center">
-          <Link className={`text-white hover:text-light-blue px-3 py-2 ${path === "/" ? "font-bold" : ""}`} href="/">Beranda</Link>
-          <Link className={`text-white hover:text-light-blue px-3 py-2 ${path === "tentang" ? "font-bold" : ""}`} href="/tentang">Tentang</Link>
-          <Link className="text-white hover:text-light-blue px-3 py-2" href="https://blog.arisansecurity.id" target="_blank" rel="noopener noreferrer">Blog</Link>
-          <Link className={`text-white hover:text-light-blue px-3 py-2 ${path === "hubungi-kami" ? "font-bold" : ""}`} href="/hubungi-kami">Kontak</Link>
-          <LanguageSwitch />
-        </div>
-        <button
-          className="md:hidden text-white focus:outline-none"
-          aria-label="Toggle menu"
-          onClick={() => setShowMenu(!showMenu)}
-        >
-          <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="18" x2="21" y2="18" /></svg>
-        </button>
       </nav>
       {showMenu && (
         <NavigationOverlay path={path || ""} showMenu={showMenu} setShowMenu={setShowMenu} />

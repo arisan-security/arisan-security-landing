@@ -25,7 +25,6 @@
   }
 }
 
-
 html,
 body,
 label {
@@ -133,4 +132,15 @@ blockquote {
   blockquote {
     font-size: 1.1em;
   }
+}
+
+/* react-slick: use flexbox instead of fragile float layout */
+.slick-track {
+  display: flex !important;
+}
+.slick-slide {
+  height: auto;
+}
+.slick-slide > div {
+  height: 100%;
 }

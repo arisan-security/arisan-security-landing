@@ -39,10 +39,15 @@ const config: Config = {
           '0%': { transform: 'translateY(0)', opacity: '1' },
           '100%': { transform: 'translateY(-100%)', opacity: '0' },
         },
+        'border-spin': {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
       },
       animation: {
         slideUp: 'slideUp 0.3s ease-in-out forwards',
         slideDown: 'slideDown 0.3s ease-in-out forwards',
+        'border-spin': 'border-spin 4s linear infinite',
       },
     },
   },
