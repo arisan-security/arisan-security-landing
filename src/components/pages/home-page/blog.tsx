@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { MdKeyboardDoubleArrowDown } from "react-icons/md";
 import Slider from "react-slick";
 import PostCard from '@/components/cards/PostCard';
@@ -96,6 +96,7 @@ const BlogPosts: React.FC = () => {
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [error, setError] = useState(false);
   const sliderRef = useRef<Slider>(null);
+  const isClient = useSyncExternalStore(() => () => {}, () => true, () => false);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -131,12 +132,12 @@ const BlogPosts: React.FC = () => {
         </div>
       </div>
       {/* Post Slider */}
-      <div className="w-full md:mx-0 relative pb-14">
+      <div className="w-full min-w-0 overflow-hidden relative">
         {error ? (
           <div className="flex justify-center items-center h-32">
             <p className="text-davys-gray">Gagal memuat artikel.</p>
           </div>
-        ) : posts.length > 0 ? (
+        ) : isClient && posts.length > 0 ? (
           <>
             <Slider ref={sliderRef} {...sliderSettings}>
               {posts.map((post, index) => {
@@ -153,9 +154,9 @@ const BlogPosts: React.FC = () => {
                 );
               })}
             </Slider>
-            <div className="flex flex-col gap-1 absolute bottom-0 right-4">
-              <SliderArrow direction="next" onClick={() => sliderRef.current?.slickNext()} />
+            <div className="flex gap-3 mt-4 justify-center">
               <SliderArrow direction="prev" onClick={() => sliderRef.current?.slickPrev()} />
+              <SliderArrow direction="next" onClick={() => sliderRef.current?.slickNext()} />
             </div>
           </>
         ) : (

@@ -13,7 +13,7 @@ const Hero: React.FC = () => {
             src="/images/hero_background.png"
             alt="hero image"
             fill
-            className="object-cover object-right opacity-70 md:opacity-100"
+            className="object-cover opacity-70 md:opacity-100"
             priority
           />
         </div>
