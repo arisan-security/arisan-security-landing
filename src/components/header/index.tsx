@@ -75,7 +75,7 @@ const Header: React.FC<HeaderProps> = ({ path }) => {
   return (
     <header className={`fixed w-full z-50 transition-all duration-300 ${showHeader ? 'top-0' : '-top-24'}`}>
       <nav className="bg-dark-blue">
-        <div className="flex items-center justify-between max-w-[1440px] mx-auto px-4 md:px-[10%] py-3 relative">
+        <div className="flex items-center justify-between max-w-[1440px] mx-auto px-4 md:px-[5%] py-3 relative">
           <div className="flex items-center gap-2">
             <Link href="/">
               <Image src="/images/arisansecurity.png" alt="Arisan Security Logo" width={120} height={32} className="h-8 w-auto" priority />
