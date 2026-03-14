@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 interface PostCardProps {
   title: string;
@@ -14,10 +15,13 @@ const PostCard: React.FC<PostCardProps> = ({ title, author, imgUrl, actionLink})
     >
       {/* Image Section */}
       <div className="w-full h-[120px] relative mb-5 flex items-center justify-center overflow-hidden">
-        <img
+        <Image
           src={imgUrl}
-          alt="article-img"
-          className="w-full object-fill object-center"
+          alt={title}
+          fill
+          unoptimized
+          className="object-fill object-center"
+          sizes="280px"
         />
       </div>
 

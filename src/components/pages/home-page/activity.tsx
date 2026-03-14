@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
+import Image from "next/image";
 import { FaLocationPin } from "react-icons/fa6";
 
 interface InstagramPost {
@@ -53,10 +54,12 @@ const Activity: React.FC = () => {
           <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center">
             {/* Left Side: Big Logo */}
             <div className="hidden md:flex flex-col w-[40%] justify-center items-center mb-8 md:mb-0">
-              <img
-                src="/images/ctf-dr-web.jpeg" 
-                alt="Indosec Summit 2024"
-                className="w-[80%] h-auto flex"
+              <Image
+                src="/images/ctf-dr-web.jpeg"
+                alt="CTF Dr.WEB 2024"
+                width={400}
+                height={300}
+                className="w-[80%] h-auto"
               />
             </div>
             {/* Right Side: Event Explanation */}
@@ -94,11 +97,14 @@ const Activity: React.FC = () => {
                 className="flex flex-col border border-gray-200 rounded-b-none rounded-t-[30px] overflow-hidden shadow-md"
               >
                 <a href={post.permalink} target="_blank" rel="noopener noreferrer">
-                  <div className="w-full aspect-square">
-                    <img
-                      className="object-cover w-full h-full object-left-top"
+                  <div className="w-full aspect-square relative">
+                    <Image
+                      fill
+                      unoptimized
+                      className="object-cover object-left-top"
                       src={post.imageUrl}
                       alt={truncatedCaption}
+                      sizes="(max-width: 768px) 100vw, 33vw"
                     />
                   </div>
                 </a>

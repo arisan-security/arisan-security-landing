@@ -1,4 +1,5 @@
 import * as React from "react";
+import Image from "next/image";
 import ProgramCard from "@/components/cards/ProgramCard"
 const Bergerak = '/images/BERgerak.png';
 const Bertumbuh = '/images/BERtumbuh.png';
@@ -123,12 +124,12 @@ const TentangPage = () => {
               </p>
             </div>
             <div className="w-full flex flex-col justify-center items-center rounded-2xl overflow-hidden bg-black">
-              <img src={napak1}/>
+              <Image src={napak1} alt="Napak tilas A-SEC sesi 1" width={800} height={600} className="w-full h-auto" />
             </div>
           </div>
           <div className="flex flex-col gap-8">
             <div className="w-full h-full flex justify-center items-center rounded-2xl overflow-hidden bg-black">
-              <img src={napak2} className="w-full h-full object-cover"/>
+              <Image src={napak2} alt="Napak tilas A-SEC sesi 2" width={800} height={600} className="w-full h-full object-cover" />
             </div>
             <div className="w-full h-full py-16 px-4 md:px-16 bg-white-purple rounded-2xl">
               <p className="text-lg text-justify">
@@ -181,7 +182,7 @@ const TentangPage = () => {
         <div className="p-4 md:p-20 flex flex-col justify-center items-center">
           <h2 className="text-3xl md:text-4xl text-white text-center">Budaya & Nilai Yang Kami Percaya</h2>
           <div className="max-w-full md:max-w-5xl">
-            <img width={1920} height={1080} src={hatiBeriman} />
+            <Image src={hatiBeriman} alt="Budaya dan nilai yang dipercaya Arisan Security" width={1920} height={1080} className="w-full h-auto" />
           </div>
         </div>
       </section>

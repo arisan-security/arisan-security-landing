@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 interface ShortcutCardProps {
   title: string;
@@ -15,12 +16,15 @@ const ShortcutCard: React.FC<ShortcutCardProps> = ({ title, description, imgUrl,
     >
       {/* Image Section */}
       <div className="w-full h-40 md:h-52 relative mb-5 flex items-center justify-center flex-shrink-0">
-        <img
-          src={imgUrl}
-          alt="content-img"
-          className="w-[80%] object-contain absolute bottom-0"
-          style={imageStyle}
-        />
+        <div className="absolute bottom-0 w-[80%]" style={imageStyle}>
+          <Image
+            src={imgUrl}
+            alt={title}
+            width={300}
+            height={300}
+            className="object-contain w-full h-auto"
+          />
+        </div>
       </div>
 
       {/* Content Section */}

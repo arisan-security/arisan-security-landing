@@ -79,7 +79,6 @@ const Header: React.FC<HeaderProps> = ({ path }) => {
           <Link href="/">
             <Image src="/images/arisansecurity.png" alt="Arisan Security Logo" width={120} height={32} className="h-8 w-auto" priority />
           </Link>
-          <span className="text-white font-bold ml-2">Arisan Security</span>
         </div>
         <div className="hidden md:flex gap-6 items-center">
           <Link className={`text-white hover:text-light-blue px-3 py-2 ${path === "/" ? "font-bold" : ""}`} href="/">Beranda</Link>
