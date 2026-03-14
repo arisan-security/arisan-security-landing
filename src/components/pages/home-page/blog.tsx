@@ -11,20 +11,19 @@ interface BlogPost {
 }
 
 const stripHtmlAndTruncate = (htmlContent: string, maxLength: number): string => {
-    const tempDiv = document.createElement("div");
-    tempDiv.innerHTML = htmlContent;
-    let plainText = tempDiv.textContent || tempDiv.innerText || "";
-  
-    const decodeHtmlEntities = (str: string) => {   
-      return str.replace(/&[a-zA-Z0-9#]+;/g, "");
-    };
-  
-    const decodedText = decodeHtmlEntities(plainText);
-  
-    return decodedText.length > maxLength ? decodedText.slice(0, maxLength).trim() + "..." : decodedText;
+    const plainText = htmlContent
+      .replace(/<[^>]*>/g, "")
+      .replace(/&amp;/g, "&")
+      .replace(/&lt;/g, "<")
+      .replace(/&gt;/g, ">")
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;/g, "'")
+      .replace(/&nbsp;/g, " ")
+      .replace(/&[a-zA-Z0-9#]+;/g, "");
+    return plainText.length > maxLength ? plainText.slice(0, maxLength).trim() + "..." : plainText;
   };
-const fetchBlogPosts = async (): Promise<BlogPost[]> => {
-    const res = await fetch(`/api/blogger`);
+const fetchBlogPosts = async (signal?: AbortSignal): Promise<BlogPost[]> => {
+    const res = await fetch(`/api/blogger`, { signal });
     const data = await res.json();
   
     const posts = data.feed.entry.slice(0,3).map((entry: any) => {
@@ -51,16 +50,19 @@ const BlogPosts: React.FC = () => {
   const [posts, setPosts] = useState<BlogPost[]>([]);
 
   useEffect(() => {
+    const controller = new AbortController();
     const fetchData = async () => {
       try {
-        const postsData = await fetchBlogPosts();
+        const postsData = await fetchBlogPosts(controller.signal);
         setPosts(postsData);
       } catch (error) {
+        if (error instanceof Error && error.name === "AbortError") return;
         console.error("Error fetching Blogger posts:", error);
       }
     };
 
     fetchData();
+    return () => controller.abort();
   }, []);
 
   return (
@@ -69,12 +71,12 @@ const BlogPosts: React.FC = () => {
       id="blog-section"
     >
       {/* Blog Section Header */}
-      <div className="w-full md:w-auto text-left mb-8 md:mb-0" data-aos="fade-up">
+      <div className="w-full md:w-auto text-left mb-8 md:mb-0">
         <h2 className="sm:text-lg sm:leading-snug font-semibold tracking-wide text-catacean-blue">Blog</h2>
         <p className="text-3xl leading-none font-bold text-catacean-blue tracking-tight mb-4 relative inline-block">
           Buah Pena Dari Kontributor
         </p>
-        <div className="mt-5 flex flex-col text-davys-gray" data-aos="fade-up">
+        <div className="mt-5 flex flex-col text-davys-gray">
           Ingin menjadi kontributor blog kami? <br /> <span className="font-extrabold">Kirim tulisanmu sekarang!</span>
             <MdKeyboardDoubleArrowDown id="cta-icon" fontSize={24} className="animate-bounce mt-4 cursor-pointer self-center hidden md:block" />
         </div>

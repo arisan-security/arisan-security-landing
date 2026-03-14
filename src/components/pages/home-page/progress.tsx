@@ -1,5 +1,4 @@
 import React from "react";
-import Wave from "react-wavify";
 import Ticker from "../../ticker";
 
 const Progress: React.FC = () => {

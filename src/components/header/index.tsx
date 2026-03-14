@@ -48,32 +48,29 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ path }) => {
   const [showMenu, setShowMenu] = React.useState(false);
-  const [lastScrollY, setLastScrollY] = React.useState(0);
   const [showHeader, setShowHeader] = React.useState(true);
   const [showBanner, setShowBanner] = React.useState(true);
   const [time, setTime] = React.useState(new Date());
+  const lastScrollYRef = React.useRef(0);
 
   React.useEffect(() => {
     const controllHeader = () => {
-      if (typeof window !== 'undefined') {
-        if (window.scrollY > lastScrollY) {
-          // setShowHeader(false);
-        } else {
-          setShowHeader(true);
-        }
-        setLastScrollY(window.scrollY);
+      const currentScrollY = window.scrollY;
+      if (currentScrollY <= lastScrollYRef.current) {
+        setShowHeader(true);
       }
+      lastScrollYRef.current = currentScrollY;
     };
-    if (typeof window !== 'undefined') {
-      window.addEventListener('scroll', controllHeader);
-      return () => window.removeEventListener('scroll', controllHeader);
-    }
-  }, [lastScrollY]);
+    window.addEventListener('scroll', controllHeader, { passive: true });
+    return () => window.removeEventListener('scroll', controllHeader);
+  }, []);
 
   React.useEffect(() => {
+    if (!showBanner) return;
+    setTime(new Date());
     const interval = setInterval(() => setTime(new Date()), 1000);
     return () => clearInterval(interval);
-  }, []);
+  }, [showBanner]);
 
   return (
     <header className={`fixed w-full z-50 transition-all duration-300 ${showHeader ? 'top-0' : '-top-24'}`}>

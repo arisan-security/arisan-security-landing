@@ -18,7 +18,7 @@ const Hero: React.FC = () => {
             style={{ objectFit: "cover" }}
           />
         </div>
-        <div className="flex flex-col gap-4 !z-10 my-24 md:my-[unset]" data-aos={"fade-left"}>
+        <div className="flex flex-col gap-4 !z-10 my-24 md:my-[unset]">
           <h2 className="text-4xl sm:text-[40px] lg:text-[50px] leading-[3rem] lg:leading-[4rem] font-extrabold tracking-tight mb-8">
             Pecahkan kode <br /> dan bersama <span className="md:bg-black md:bg-opacity-60 md:rounded-lg md:px-4">merubah dunia!</span>
           </h2>

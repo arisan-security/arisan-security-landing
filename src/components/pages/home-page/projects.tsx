@@ -3,7 +3,7 @@ import React from "react";
 const Projects: React.FC = () => {
     return (
         <section className="min-h-screen py-12 px-8 snap-start">
-            <div className="mb-12" data-aos={"fade-up"}>
+            <div className="mb-12">
                 <h2 className="sm:text-lg text-center sm:leading-snug font-semibold tracking-wide uppercase text-red-600 mb-3">Proyek</h2>
                 <p className="text-4xl lg:text-3xl text-center leading-none font-bold text-gray-800 tracking-tight mb-8">Sorotan Proyek Terbaru Kami Untuk Khayalak Luas</p>
             </div>

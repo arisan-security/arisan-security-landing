@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { FaLocationPin } from "react-icons/fa6";
-import { client } from "@/utils/sanity";
 
 interface InstagramPost {
   postId: string;
@@ -15,20 +14,28 @@ const Activity: React.FC = () => {
   const [posts, setPosts] = useState<InstagramPost[]>([]);
 
   useEffect(() => {
+    const controller = new AbortController();
     const fetchData = async () => {
       try {
-        const response = await fetch("/api/instagram");
+        const response = await fetch("/api/instagram", { signal: controller.signal });
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
         const postsData = await response.json();
         setPosts(postsData);
       } catch (error) {
+        if (error instanceof Error && error.name === "AbortError") return;
         console.error("Error fetching Instagram data:", error);
       }
     };
     fetchData();
+    return () => controller.abort();
   }, []);
+
+  const sortedPosts = useMemo(
+    () => [...posts].sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()).slice(0, 3),
+    [posts]
+  );
 
   return (
     <div className="bg-dark-blue">
@@ -75,7 +82,7 @@ const Activity: React.FC = () => {
           </div>
         </div>
         <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-4 px-0 mt-[-3rem]">
-          {posts.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()).slice(0, 3).map((post) => {
+          {sortedPosts.map((post) => {
             const maxLength = 150;
             const truncatedCaption =
               post.caption.length > maxLength

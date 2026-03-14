@@ -4,27 +4,9 @@ const Bergerak = '/images/BERgerak.png';
 const Bertumbuh = '/images/BERtumbuh.png';
 const Berdampak = '/images/BERdampak.png';
 const hatiBeriman = '/images/hati-beriman.png';
-const mapIcon = '/images/map-icon.png';
-const jadwalIcon = '/images/jadwal-icon.png';
 const napak1 = '/images/napak-tilas-1.jpg';
 const napak2 = '/images/napak-tilas-2.jpg';
-import {
-  FaLongArrowAltLeft,
-  FaLongArrowAltRight,
-  FaRandom,
-  FaTwitter,
-} from "react-icons/fa";
 import Page from "@/layouts/Page";
-
-declare global {
-  interface Window {
-      FB:any;
-  }
-  interface Document {
-      twttr:any;
-  }
-}
-
 
 const TentangPage = () => {
 
@@ -79,10 +61,6 @@ const TentangPage = () => {
       author: "Oscar Wilde",
     },
   ];
-
-  var currentQuote = 0;
-  var progressWidth = 0;
-
 
   return (
     <Page title={"Tentang"}  path={"tentang"} 
