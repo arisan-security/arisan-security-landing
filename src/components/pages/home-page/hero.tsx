@@ -8,14 +8,13 @@ const Hero: React.FC = () => {
   return (
     <div className="bg-dark-blue">
       <section className="lg:h-[938px] flex items-center relative px-[10%] !max-w-[1440px] m-auto text-white overflow-hidden">
-        <div className="absolute z-0 h-full w-[70%]">
+        <div className="absolute z-0 inset-0">
           <Image
             src="/images/hero_background.png"
             alt="hero image"
             fill
-            className="min-w-[792px] opacity-70 md:opacity-[unset] min-h-[920px] scale-[.8] md:scale-[unset] bottom-[-320px] md:bottom-[-400px] right-[-420px] md:right-[-200px] absolute object-cover"
+            className="object-cover object-right opacity-70 md:opacity-100"
             priority
-            style={{ objectFit: "cover" }}
           />
         </div>
         <div className="flex flex-col gap-4 !z-10 my-24 md:my-[unset]">
