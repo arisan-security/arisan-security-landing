@@ -1,15 +1,30 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import PropTypes from "prop-types"
 
-const SEO = ({ title, description, image, article }) => {
+export interface SEOProps {
+  title?: string;
+  description?: string;
+  image?: string;
+  article?: boolean;
+}
+
+/**
+ * SEO component: sets meta tags and Open Graph for SEO and social sharing.
+ * Usage: <SEO title="..." description="..." image="..." article />
+ */
+const SEO: React.FC<SEOProps> = ({
+  title = "Arisan Security - Komunitas IT Security Indonesia",
+  description = "",
+  image = "/images/arisansecurity.png",
+  article = false,
+}) => {
   const router = useRouter();
-  const siteUrl = "https://www.arisansecurity.id/";
+  const siteUrl = process.env.NEXT_PUBLIC_PUBLIC_URL || "https://www.arisansecurity.id/";
   const pathname = router.pathname;
   const seo = {
-    title: title || defaultTitle,
-    description: description || "",
-    image: `${siteUrl}${image || ""}`,
+    title,
+    description,
+    image: `${siteUrl}${image}`,
     url: `${siteUrl}${pathname}`,
   };
 
@@ -33,15 +48,3 @@ const SEO = ({ title, description, image, article }) => {
 };
 
 export default SEO;
-SEO.propTypes = {
-  title: PropTypes.string,
-  description: PropTypes.string,
-  image: PropTypes.string,
-  article: PropTypes.bool,
-}
-SEO.defaultProps = {
-  title: null,
-  description: null,
-  image: null,
-  article: false,
-}

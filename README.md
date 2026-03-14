@@ -38,3 +38,32 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Commit Message Conventions
+
+This project follows the [Conventional Commits](https://www.conventionalcommits.org/) specification for commit messages. Please use the following types for your commits:
+
+- **feat:**     A new feature
+- **fix:**      A bug fix
+- **docs:**     Documentation only changes
+- **style:**    Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+- **refactor:** A code change that neither fixes a bug nor adds a feature (e.g., code structure, TypeScript migration)
+- **perf:**     A code change that improves performance
+- **test:**     Adding missing tests or correcting existing tests
+- **build:**    Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
+- **ci:**       Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
+- **chore:**    Other changes that don't modify src or test files (e.g., updating build tasks, package manager configs)
+- **revert:**   Reverts a previous commit
+
+### Example Commit Messages
+
+```
+feat: add user authentication module
+fix: correct typo in login error message
+refactor: convert shortcut.js to TypeScript and improve prop types
+docs: update README with commit conventions
+style: reformat code with Prettier
+```
+
+For more details, see the [Conventional Commits documentation](https://www.conventionalcommits.org/).
+

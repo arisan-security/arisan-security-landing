@@ -1,5 +1,3 @@
-import Image from 'next/image'
-import { Nunito } from 'next/font/google'
 import Page from "@/layouts/Page";
 import Hero from "@/components/pages/home-page/hero"
 import Shortcut from "@/components/pages/home-page/shortcut"
@@ -7,8 +5,6 @@ import Progress from "@/components/pages/home-page/progress"
 import Blog from "@/components/pages/home-page/blog"
 import Activity from "@/components/pages/home-page/activity"
 import Cta from "@/components/pages/home-page/cta"
-
-const inter = Nunito({ subsets: ['latin'] })
 
 import React, { useEffect } from 'react';
 
@@ -19,7 +15,7 @@ export default function Home() {
     
     const handleScroll = () => {
       document.getElementById('contributor-section')?.scrollIntoView({
-        behavior: 'smooth'
+        behavior: 'smooth' 
       });
     };
 
@@ -46,8 +42,8 @@ export default function Home() {
       }}
     >
       <Hero />
-      <Shortcut />
       <Progress />
+      <Shortcut />
       {/* <Projects /> */}
       <Blog />
       <Activity />

@@ -1,0 +1,19 @@
+<!--
+  Static form for Netlify deploy-time form detection.
+  Next.js 16 does not emit static HTML pages, so Netlify cannot auto-detect
+  forms from React code. This file mirrors the contact form fields so Netlify
+  registers the "contact" form at deploy time.
+  See: https://opennext.js.org/netlify/forms
+-->
+<html>
+<body>
+  <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+    <input name="form-name" type="hidden" value="contact" />
+    <input name="bot-field" />
+    <input name="name" />
+    <input name="email" />
+    <input name="phone" />
+    <textarea name="message"></textarea>
+  </form>
+</body>
+</html>
