@@ -1,8 +1,5 @@
 import * as React from "react"
-import Header from "../components/header"
 import "tailwindcss/tailwind.css"
-import Footer from "../components/footer"
-import Post from "../components/post"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Page from "@/layouts/Page";
@@ -73,6 +70,30 @@ const collaborators = [
 
 // markup
 const ContactPage = () => {
+  const [status, setStatus] = React.useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus('submitting');
+    const form = e.currentTarget;
+    const formData = new URLSearchParams(new FormData(form) as unknown as Record<string, string>);
+    try {
+      const res = await fetch('/__forms.html', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: formData.toString(),
+      });
+      if (res.ok) {
+        setStatus('success');
+        form.reset();
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
+  };
+
   return (
     <Page 
       title="Contact"
@@ -105,8 +126,11 @@ const ContactPage = () => {
               <div className="flex m-5">
                 <div className="grid md:grid-cols-2 md:gap-4">
                   <div>
-                    <form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+                    <form name="contact" onSubmit={handleSubmit}>
                       <input type="hidden" name="form-name" value="contact" />
+                      <p className="absolute -left-[9999px]" aria-hidden="true">
+                        <label>Don&#39;t fill this out: <input name="bot-field" /></label>
+                      </p>
                       <div className="mt-4">
                         <label className="font-semibold">Nama</label> <br/>
                         <input className="px-2 py-2 mt-2 w-full shadow-sm rounded-md outline-none" name="name" placeholder="Nama lengkap"/>
@@ -124,7 +148,11 @@ const ContactPage = () => {
                         <textarea className="px-2 py-2 mt-2 w-full shadow-sm rounded-md outline-none" name="message" placeholder="Pesan"/>
                       </div>
                       <div className="mt-4 text-right">
-                        <button type="submit" className="rounded-full bg-dark-blue shadow-lg text-white px-16 py-1 mt-6">Kirim</button>
+                        <button type="submit" disabled={status === 'submitting'} className="rounded-full bg-dark-blue shadow-lg text-white px-16 py-1 mt-6 disabled:opacity-50">
+                          {status === 'submitting' ? 'Mengirim...' : 'Kirim'}
+                        </button>
+                        {status === 'success' && <p className="text-green-600 mt-2">Pesan berhasil dikirim!</p>}
+                        {status === 'error' && <p className="text-red-600 mt-2">Gagal mengirim pesan. Silakan coba lagi.</p>}
                       </div>
                     </form>
                   </div>
