@@ -1,0 +1,30 @@
+{
+    "servers": {
+        "Figma": {
+			"type": "http",
+			"url": "http://127.0.0.1:3845/mcp"
+		},
+        "next-devtools": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "next-devtools-mcp@latest"
+            ]
+        },
+        "chromedevtools": {
+			"type": "stdio",
+			"command": "npx",
+			"args": [
+				"chrome-devtools-mcp@latest",
+				"--browserUrl",
+				"${input:browser_url}",
+				"--headless",
+				"${input:headless}",
+				"--isolated",
+				"${input:isolated}",
+				"--channel",
+				"${input:chrome_channel}"
+			],
+		}
+    },
+}

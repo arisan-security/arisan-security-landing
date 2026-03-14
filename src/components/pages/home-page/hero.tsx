@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
         </div>
         <div className="flex flex-col gap-4 !z-10 my-24 md:my-[unset]" data-aos={"fade-left"}>
           <h2 className="text-4xl sm:text-[40px] lg:text-[50px] leading-[3rem] lg:leading-[4rem] font-extrabold tracking-tight mb-8">
-            Pecahkan kode <br /> dam bersama <span className="md:bg-black md:bg-opacity-60 md:rounded-lg md:px-4">merubah dunia!</span>
+            Pecahkan kode <br /> dan bersama <span className="md:bg-black md:bg-opacity-60 md:rounded-lg md:px-4">merubah dunia!</span>
           </h2>
           <p className="text-sm font-thin lg:text-lg tracking-tight mb-6 md:mb-8 md:w-[30%]">
             Arisan SECurity (A-SEC) adalah wadah untuk berbicara seputar Information Technology, terkhusus pada bidang Information Technology Security. Kami sangat amat terbuka bagi semua kalangan & Elemen masyarakat untuk bukan hanya sekedar berkolaborasi melainkan berelaborasi.
