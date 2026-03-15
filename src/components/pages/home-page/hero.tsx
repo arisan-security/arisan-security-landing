@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 const terminalLines = [
   { key: "focus", value: "Cyber Security Awareness" },
@@ -11,6 +12,8 @@ const terminalLines = [
 ];
 
 const Hero: React.FC = () => {
+  const t = useTranslations('Hero');
+
   return (
     <section className="bg-dark-blue text-white snap-start relative overflow-hidden min-h-screen">
       {/* Background layers */}
@@ -25,16 +28,16 @@ const Hero: React.FC = () => {
           <div>
             <div className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] font-medium uppercase tracking-[0.2em] text-white/70 backdrop-blur-sm">
               <span className="h-2 w-2 rounded-full bg-light-blue shadow-[0_0_8px_rgba(2,136,217,0.8)]" />
-              Arisan Security
+              {t('badge')}
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight">
-              Pecahkan kode <br className="hidden sm:block" />dan bersama{" "}
-              <span className="text-light-purple">merubah dunia!</span>
+              {t('titleLine1')} <br className="hidden sm:block" />{t('titleLine2')}{" "}
+              <span className="text-light-purple">{t('titleHighlight')}</span>
             </h1>
 
             <p className="mt-6 text-sm sm:text-base leading-7 font-light text-white/75 max-w-xl text-justify">
-              Arisan SECurity (A-SEC) adalah wadah untuk berbicara seputar Information Technology, terkhusus pada bidang Information Technology Security. Kami sangat amat terbuka bagi semua kalangan &amp; Elemen masyarakat untuk bukan hanya sekedar berkolaborasi melainkan berelaborasi.
+              {t('description')}
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
@@ -42,7 +45,7 @@ const Hero: React.FC = () => {
                 href="/tentang"
                 className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-dark-blue transition hover:bg-white-purple"
               >
-                Pelajari Selengakpanya
+                {t('learnMore')}
               </Link>
               <Link
                 href="https://blog.arisansecurity.id"
@@ -50,7 +53,7 @@ const Hero: React.FC = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
               >
-                Kunjungi blog komunitas
+                {t('visitBlog')}
               </Link>
             </div>
           </div>

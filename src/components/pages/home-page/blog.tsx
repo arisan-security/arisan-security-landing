@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState, useSyncExternalStore } from "react"
 import { MdKeyboardDoubleArrowDown } from "react-icons/md";
 import Slider from "react-slick";
 import PostCard from '@/components/cards/PostCard';
+import { useTranslations } from "next-intl";
 
 interface BlogPost {
   author: string;
@@ -93,6 +94,7 @@ const SliderArrow: React.FC<{ direction: "next" | "prev"; onClick: () => void }>
 );
 
 const BlogPosts: React.FC = () => {
+  const t = useTranslations('Blog');
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [error, setError] = useState(false);
   const sliderRef = useRef<Slider>(null);
@@ -122,12 +124,12 @@ const BlogPosts: React.FC = () => {
     >
       {/* Blog Section Header */}
       <div className="w-full md:w-auto text-left mb-8 md:mb-0">
-        <h2 className="sm:text-lg sm:leading-snug font-semibold tracking-wide text-catacean-blue">Blog</h2>
+        <h2 className="sm:text-lg sm:leading-snug font-semibold tracking-wide text-catacean-blue">{t('sectionTitle')}</h2>
         <p className="text-3xl leading-none font-bold text-catacean-blue tracking-tight mb-4 relative inline-block">
-          Buah Pena Dari Kontributor
+          {t('title')}
         </p>
         <div className="mt-5 flex flex-col text-davys-gray">
-          Ingin menjadi kontributor blog kami? <br /> <span className="font-extrabold">Kirim tulisanmu sekarang!</span>
+          {t('ctaQuestion')} <br /> <span className="font-extrabold">{t('ctaAction')}</span>
           <MdKeyboardDoubleArrowDown id="cta-icon" fontSize={24} className="animate-bounce mt-4 cursor-pointer self-center hidden md:block" />
         </div>
       </div>
@@ -135,7 +137,7 @@ const BlogPosts: React.FC = () => {
       <div className="w-full min-w-0 overflow-hidden relative">
         {error ? (
           <div className="flex justify-center items-center h-32">
-            <p className="text-davys-gray">Gagal memuat artikel.</p>
+            <p className="text-davys-gray">{t('errorLoading')}</p>
           </div>
         ) : isClient && posts.length > 0 ? (
           <>
@@ -161,7 +163,7 @@ const BlogPosts: React.FC = () => {
           </>
         ) : (
           <div className="flex justify-center items-center h-32">
-            <p className="text-davys-gray">Memuat artikel...</p>
+            <p className="text-davys-gray">{t('loading')}</p>
           </div>
         )}
       </div>

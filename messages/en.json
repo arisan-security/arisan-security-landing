@@ -1,0 +1,122 @@
+{
+  "Nav": {
+    "home": "Home",
+    "about": "About",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "Banner": {
+    "welcome": "Welcome to Arisan Security!",
+    "close": "Close"
+  },
+  "Hero": {
+    "badge": "Arisan Security",
+    "titleLine1": "Crack the code",
+    "titleLine2": "and together",
+    "titleHighlight": "change the world!",
+    "description": "Arisan SECurity (A-SEC) is a platform for discussing Information Technology, especially in the field of Information Technology Security. We are openly welcoming all groups and elements of society to not only collaborate but also elaborate.",
+    "learnMore": "Learn More",
+    "visitBlog": "Visit community blog"
+  },
+  "Progress": {
+    "cyberCases": "Total cyber security cases we've helped resolve.",
+    "members": "Total members from across the archipelago.",
+    "awards": "Total awards from both private and government sectors."
+  },
+  "Shortcut": {
+    "subtitle": "Shortcuts",
+    "title": "Information You Might Need",
+    "sawalaMangkusTitle": "Sawala Mangkus",
+    "sawalaMangkusDesc": "Help build healthy and positive Information Technology discussions through our online Telegram group, available for the public.",
+    "lintasTaksaTitle": "Lintas Taksa",
+    "lintasTaksaDesc": "Presenting brief, up-to-date perspectives from expert practitioners and Information Technology enthusiasts, particularly in the field of Cybersecurity.",
+    "acastTitle": "A-Cast",
+    "acastDesc": "A non-streaming digital audio that covers everything about Information Technology. Listen to comprehensive IT world updates anytime, anywhere!"
+  },
+  "Blog": {
+    "sectionTitle": "Blog",
+    "title": "Written Works From Contributors",
+    "ctaQuestion": "Want to become a contributor to our blog?",
+    "ctaAction": "Submit your writing now!",
+    "errorLoading": "Failed to load articles.",
+    "loading": "Loading articles..."
+  },
+  "Activity": {
+    "title": "Recent Activities",
+    "ctfTitle": "CTF Dr.WEB 2024",
+    "ctfDesc1": "Dr.WEB is back looking for the best talent in cybersecurity! 🛡",
+    "ctfDesc2": "Join the Capture The Flag (CTF) competition from December 2 – 15, 2024, and prove your skills in reverse engineering & file analysis. 💻",
+    "ctfHowToPlay": "🎯 How to Play:",
+    "ctfChallenge": "Complete 16 challenges to capture the \"flag\" and collect the most points. The fastest players will earn bonus points!",
+    "ctfPrizes": "🏆 Prizes:",
+    "ctfPrize1": "🎁 Dr.WEB Security Space license (1 year) for all participants",
+    "ctfPrize2": "🎁 Special prizes for the top 20 players",
+    "ctfRegistration": "✍️ Registration is now open!",
+    "ctfRegisterNow": "Register now!",
+    "seeMore": "See more"
+  },
+  "Cta": {
+    "title": "Writing Is the Window to Knowledge, From All Fields of Knowledge",
+    "question": "Want to get involved as a contributor?",
+    "desc1": "We implement a Crowdsourcing model, which means anyone can contribute to this platform. From the community, for the community; from you, for you. Every piece of writing you submit will go through a proofreading process by our editors.",
+    "desc2": "Once your writing meets the publishing criteria, you will earn points that are useful for leading the Scholar Champions leaderboard, like a Hall of Fame.",
+    "submitWriting": "Submit Writing"
+  },
+  "Projects": {
+    "subtitle": "Projects",
+    "title": "Spotlight on Our Latest Projects for the Public",
+    "comingSoon": "Coming Soon~",
+    "comingSoonDesc": "Projects are currently under development...",
+    "ideaTitle": "HAVE AN INTERESTING PROJECT IDEA?",
+    "ideaDesc": "If you have a creative idea related to the IT world, don't hesitate to send your idea through the \"Contact\" page."
+  },
+  "Collaborator": {
+    "title": "Previously Collaborated With"
+  },
+  "Footer": {
+    "submitWriting": "Submit Writing",
+    "contactUs": "Contact Us",
+    "pressKit": "Media Press Kit",
+    "privacy": "Privacy Policy",
+    "terms": "Terms & Conditions"
+  },
+  "Seo": {
+    "defaultTitle": "Arisan Security - Indonesian IT Security Community"
+  },
+  "About": {
+    "pageTitle": "About",
+    "whoAreWe": "Who Are We?",
+    "whoDesc1": "We are a non-profit community oriented toward the civilization of Information Technology, especially in the field of Information Technology Security.",
+    "whoDesc2": "We carry out various activities to support our members in contributing to the Information Technology ecosystem, particularly in Indonesia's cybersecurity sector, on a sustainable basis.",
+    "napakTilas": "Our Journey",
+    "napakDesc1": "Arisan SECurity {A-SEC} is a platform for discussing Information Technology, especially in the field of Information Technology Security. We are open to all layers of society to not only collaborate but also elaborate.",
+    "napakDesc2": "Information Technology Security is the most valuable asset for internet users (Digital World) in welcoming the Industry 5.0 era, which is extremely lacking in privacy. Therefore, the \"Security Awareness\" mindset must be socialized and educated to the general public.",
+    "napakDesc3": "A-SEC was born in the city of Salatiga, a strategic city known as \"Mini Indonesia\". This is because many people from all across Indonesia come to this student city to pursue education, build careers, and more.",
+    "napakDesc4": "Seeing this potential, we are very optimistic and believe that A-SEC can spread the \"Security Awareness\" mindset throughout Indonesia, especially in 3T regions (Underdeveloped, Frontier, and Outermost) through our members who have joined the A-SEC volunteer project and are growing through our mentorship system.",
+    "ourPrograms": "Our Programs",
+    "bertumbuhTitle": "BERTumbuh (Growth)",
+    "bertumbuhDesc": "Learning together in developing the knowledge of each community member to become more mature in comprehensive thinking and competent individuals in IT, especially IT Security.",
+    "bergerakTitle": "BERgerak (Action)",
+    "bergerakDesc": "Encouraging creativity and implementation among community members from the exchange of digital information in IT, especially IT Security, so that concrete evidence of applied theory is clearly visible.",
+    "berdampakTitle": "BERDampak (Impact)",
+    "berdampakDesc": "Creating positive impact from every implementation and movement carried out, ensuring it is always beneficial for fellow community members, IT enthusiasts, and even the general public.",
+    "cultureValues": "Culture & Values We Believe In"
+  },
+  "Contact": {
+    "title": "Contact Us",
+    "description": "We are open and supportive of all parties who wish to collaborate with us in building a better human civilization, especially in the world of Information Technology & Cybersecurity.",
+    "portal": "Our Portal",
+    "nameLabel": "Name",
+    "namePlaceholder": "Full name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Email address",
+    "phoneLabel": "Phone Number",
+    "phonePlaceholder": "Phone number",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Your message",
+    "submitting": "Submitting...",
+    "submit": "Submit",
+    "success": "Message sent successfully!",
+    "error": "Failed to send message. Please try again."
+  }
+}

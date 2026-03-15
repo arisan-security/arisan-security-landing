@@ -1,6 +1,10 @@
 import * as React from "react"
 import Page from "@/layouts/Page";
+import { useTranslations } from "next-intl";
+import type { GetStaticPropsContext } from 'next';
+
 const ContactPage = () => {
+  const t = useTranslations('Contact');
   const [status, setStatus] = React.useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -39,16 +43,11 @@ const ContactPage = () => {
           <div className="w-full pt-[200px] px-4 md:px-5">
             <div className="bg-[#D9D9D9] grid grid-cols-1 md:grid-cols-[35%_1fr] text-dark-blue w-full max-w-[800px] mx-auto overflow-hidden rounded-[22px] p-8 md:p-10">
               <div className="pr-5 mb-8 md:mb-0">
-                <h2 className="font-bold text-[40px] leading-tight">Hubungi Kami</h2>
+                <h2 className="font-bold text-[40px] leading-tight">{t('title')}</h2>
                 <p className="text-base text-justify mt-6 mb-8">
-                  Kami terbuka serta mendukung
-                  segala pihak yang ingin bekerjasama
-                  dengan kami demi membangun
-                  peradaban manusia yang lebih baik,
-                  terkhusus dalam dunia Teknologi
-                  Informasi &amp; Kemanan Siber.
+                  {t('description')}
                 </p>
-                <a href="https://s.id/arisansecurity" target="_blank" rel="noopener noreferrer" className="text-[#6947FF] font-semibold underline">Portal Kami</a>
+                <a href="https://s.id/arisansecurity" target="_blank" rel="noopener noreferrer" className="text-[#6947FF] font-semibold underline">{t('portal')}</a>
               </div>
               <div>
                 <form name="contact" onSubmit={handleSubmit}>
@@ -57,27 +56,27 @@ const ContactPage = () => {
                     <label>Don&#39;t fill this out: <input name="bot-field" /></label>
                   </p>
                   <div>
-                    <label className="font-bold text-sm">Nama</label>
-                    <input className="px-3 py-2 mt-1 w-full bg-white rounded-md outline-none text-sm" name="name" placeholder="Nama lengkap" />
+                    <label className="font-bold text-sm">{t('nameLabel')}</label>
+                    <input className="px-3 py-2 mt-1 w-full bg-white rounded-md outline-none text-sm" name="name" placeholder={t('namePlaceholder')} />
                   </div>
                   <div className="mt-4">
-                    <label className="font-bold text-sm">Email</label>
-                    <input className="px-3 py-2 mt-1 w-full bg-white rounded-md outline-none text-sm" name="email" placeholder="Alamat Surel" />
+                    <label className="font-bold text-sm">{t('emailLabel')}</label>
+                    <input className="px-3 py-2 mt-1 w-full bg-white rounded-md outline-none text-sm" name="email" placeholder={t('emailPlaceholder')} />
                   </div>
                   <div className="mt-4">
-                    <label className="font-bold text-sm">Nomor Telepon</label>
-                    <input className="px-3 py-2 mt-1 w-full bg-white rounded-md outline-none text-sm" name="phone" placeholder="Nomor Telepon" />
+                    <label className="font-bold text-sm">{t('phoneLabel')}</label>
+                    <input className="px-3 py-2 mt-1 w-full bg-white rounded-md outline-none text-sm" name="phone" placeholder={t('phonePlaceholder')} />
                   </div>
                   <div className="mt-4">
-                    <label className="font-bold text-sm">Pesan</label>
-                    <textarea className="px-3 py-2 mt-1 w-full bg-white rounded-md outline-none text-sm" name="message" placeholder="Pesan" rows={2} />
+                    <label className="font-bold text-sm">{t('messageLabel')}</label>
+                    <textarea className="px-3 py-2 mt-1 w-full bg-white rounded-md outline-none text-sm" name="message" placeholder={t('messagePlaceholder')} rows={2} />
                   </div>
                   <div className="mt-6 text-right">
                     <button type="submit" disabled={status === 'submitting'} className="rounded-[14px] bg-dark-blue text-white px-10 py-2 font-semibold disabled:opacity-50">
-                      {status === 'submitting' ? 'Mengirim...' : 'Kirim'}
+                      {status === 'submitting' ? t('submitting') : t('submit')}
                     </button>
-                    {status === 'success' && <p className="text-green-700 mt-2 text-sm">Pesan berhasil dikirim!</p>}
-                    {status === 'error' && <p className="text-red-600 mt-2 text-sm">Gagal mengirim pesan. Silakan coba lagi.</p>}
+                    {status === 'success' && <p className="text-green-700 mt-2 text-sm">{t('success')}</p>}
+                    {status === 'error' && <p className="text-red-600 mt-2 text-sm">{t('error')}</p>}
                   </div>
                 </form>
               </div>
@@ -90,3 +89,11 @@ const ContactPage = () => {
 }
 
 export default ContactPage
+
+export async function getStaticProps(context: GetStaticPropsContext) {
+  return {
+    props: {
+      messages: (await import(`../../messages/${context.locale}.json`)).default,
+    },
+  };
+}
