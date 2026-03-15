@@ -1,6 +1,8 @@
 import * as React from "react";
 import Image from "next/image";
 import ProgramCard from "@/components/cards/ProgramCard"
+import { useTranslations } from "next-intl";
+import type { GetStaticPropsContext } from 'next';
 const Bergerak = '/images/BERgerak.png';
 const Bertumbuh = '/images/BERtumbuh.png';
 const Berdampak = '/images/BERdampak.png';
@@ -10,6 +12,7 @@ const napak2 = '/images/napak-tilas-2.jpg';
 import Page from "@/layouts/Page";
 
 const TentangPage = () => {
+  const t = useTranslations('About');
 
   const listQuotes = [
     {
@@ -64,7 +67,7 @@ const TentangPage = () => {
   ];
 
   return (
-    <Page title={"Tentang"}  path={"tentang"} 
+    <Page title={t('pageTitle')}  path={"tentang"} 
       seoProps={{
         title: "A-SEC | About us",
         description: "Know more about Arisan SECurity or A-SEC",
@@ -77,19 +80,14 @@ const TentangPage = () => {
               gridTemplateColumns: '35% auto',
             }}>
             <div className="block max-w-xl text-white pr-5">
-              <h2 className="font-semibold text-[40px]">Siapa Kami?</h2>
+              <h2 className="font-semibold text-[40px]">{t('whoAreWe')}</h2>
               <br />
               <p className="text-md leading-normal">
-                Kami adalah komunitas nirlaba yang berorientasi pada peradaban
-                Teknologi Informasi, terutama pada bidang Information Technology
-                Security.
+                {t('whoDesc1')}
               </p>
               <br />
               <p className="text-md leading-normal">
-                Kami melakukan berbagai aktivitas demi menyokong anggota kami
-                untuk bisa berkontribusi dalam siklus ekosistem Teknologi
-                Informasi, khususnya sektor keamanan siber Indonesia secara
-                berkelanjutan.
+                {t('whoDesc2')}
               </p>
             </div>
             <div className="flex mt-5 w-full overflow-hidden rounded-2xl">
@@ -103,24 +101,15 @@ const TentangPage = () => {
         <div className="py-24 px-0 !max-w-[1440px] md:px-[10%] m-auto relative grid grid-flow-row grid-cols-2 gap-8" style={{
           gridTemplateColumns: "45% 55%"
         }}>
-          <h2 className="absolute text-2xl font-black top-0 left-1/2 translate-x-[-50%] translate-y-[-50%] bg-pixie-powder px-12 rounded-full py-2 tracking-[4px] uppercase text-white">Napak Tilas</h2>
+          <h2 className="absolute text-2xl font-black top-0 left-1/2 translate-x-[-50%] translate-y-[-50%] bg-pixie-powder px-12 rounded-full py-2 tracking-[4px] uppercase text-white">{t('napakTilas')}</h2>
           <div className="flex flex-col gap-8">
             <div className="w-full py-16 px-4 md:px-16 bg-white-purple rounded-2xl">
               <p className="text-lg text-justify">
-                &nbsp; &nbsp; &nbsp;Arisan SECurity {"{A-SEC}"} adalah wadah untuk
-                berbicara seputar <em>Information Technology</em>, terkhusus pada
-                bidang <em>Information Technology Security</em>. Kami terbuka bagi
-                seluruh lapisan masyarakat untuk bukan hanya sekedar berkolaborasi
-                melainkan berelaborasi.&nbsp;
+                {t('napakDesc1')}
               </p>
               <br />
               <p className="text-lg text-justify">
-                &nbsp; &nbsp; &nbsp;<em> Information Technology Security</em>{" "}
-                adalah aset paling tinggi bagi para pengguna dunia maya (
-                <em>Digital World</em>) guna menyongsong era <em>Industry</em> 5.0
-                yang sudah sangat amat minim akan privasi. Oleh karena itu
-                <em> vibes</em> “<em>Security Awareness</em>” ini harus
-                disosialisasikan serta diedukasikan ke khalayak ramai.
+                {t('napakDesc2')}
               </p>
             </div>
             <div className="w-full flex flex-col justify-center items-center rounded-2xl overflow-hidden bg-black">
@@ -133,21 +122,11 @@ const TentangPage = () => {
             </div>
             <div className="w-full h-full py-16 px-4 md:px-16 bg-white-purple rounded-2xl">
               <p className="text-lg text-justify">
-                &nbsp; &nbsp; &nbsp; A-SEC lahir di kota Salatiga, yang mana kota
-                strategis ini terkenal dengan sebutan “Indonesia Mini”. Hal ini
-                dikarenakan banyak pendatang dari Sabang — Merauke Indonesia,
-                datang merantau di kota pelajar ini untuk; Menimba Ilmu, Menitih
-                Karir, Dan lain sebagainya.
+                {t('napakDesc3')}
               </p>
               <br />
               <p className="text-lg text-justify">
-                &nbsp; &nbsp; &nbsp; Dengan melihat potensi ini, kami sangat
-                optimis dan percaya bahwa A-SEC dapat menyebarkan <em>vibes</em> “
-                <em>Security Awareness</em>” diseluruh Indonesia, terutama di
-                daerah 3T (Tertinggal, Terdepan, &amp; Terluar) melalui para
-                anggota kami yang sudah bergabung dalam A-SEC <em>volunteer</em>{" "}
-                <em>project</em> serta berproses didalamnya melalui sistem
-                kaderisasi.
+                {t('napakDesc4')}
               </p>
             </div>
             
@@ -157,22 +136,22 @@ const TentangPage = () => {
 
       <section className="bg-dark-blue">
         <div className="py-12 px-4 !max-w-[1440px] md:px-[10%] m-auto flex flex-col w-full justify-center items-center gap-4">
-          <h2 className="text-2xl font-black mb-10 tracking-[4px] uppercase text-white">Program Kami</h2>
+          <h2 className="text-2xl font-black mb-10 tracking-[4px] uppercase text-white">{t('ourPrograms')}</h2>
           <div className="grid grid-flow-col grid-rows-1 md:grid-flow-row md:grid-cols-3 gap-4 pb-16">
             <ProgramCard
               img={Bertumbuh}
-              title="BERTumbuh"
-              description="Saling belajar bersama dalam pengembangan pengetahuan setiap anggota komunitas agar semakin dewasa dalam berpikir komprehensif serta menjadi pribadi yang kompeten di dalam bidang IT terkhususnya IT Security."
+              title={t('bertumbuhTitle')}
+              description={t('bertumbuhDesc')}
             />
             <ProgramCard
               img={Bergerak}
-              title="BERgerak"
-              description="Memacu kreativitas dan implementasi anggota komunitas dari hasil pertukaran informasi lini digital di bidang IT terkhususnya IT Security, agar terlihat jelas bukti konkret pengaplikasian teori yang didapatkan."
+              title={t('bergerakTitle')}
+              description={t('bergerakDesc')}
             />
             <ProgramCard
               img={Berdampak}
-              title="BERDampak"
-              description="Membuahkan dampak positif dari setiap hasil implementasi pergerakan yang dilakukan serta memastikan selalu dapat bermanfaat bagi sesama anggota komunitas, para IT Enthusiast, bahkan sampai ke masyarakat."
+              title={t('berdampakTitle')}
+              description={t('berdampakDesc')}
             />
           </div>
         </div>
@@ -180,7 +159,7 @@ const TentangPage = () => {
 
       <section className="bg-rich-black">
         <div className="p-4 md:p-20 flex flex-col justify-center items-center">
-          <h2 className="text-3xl md:text-4xl text-white text-center">Budaya & Nilai Yang Kami Percaya</h2>
+          <h2 className="text-3xl md:text-4xl text-white text-center">{t('cultureValues')}</h2>
           <div className="max-w-full md:max-w-5xl">
             <Image src={hatiBeriman} alt="Budaya dan nilai yang dipercaya Arisan Security" width={1920} height={1080} className="w-full h-auto" />
           </div>
@@ -226,3 +205,11 @@ const TentangPage = () => {
 };
 
 export default TentangPage;
+
+export async function getStaticProps(context: GetStaticPropsContext) {
+  return {
+    props: {
+      messages: (await import(`../../messages/${context.locale}.json`)).default,
+    },
+  };
+}

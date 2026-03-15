@@ -1,16 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useRouter } from 'next/router';
 
 const LanguageSwitch: React.FC = () => {
-  const [isEnglish, setIsEnglish] = useState(false);
+  const router = useRouter();
+  const isEnglish = router.locale === 'en';
 
   const toggleLanguage = () => {
-    // setIsEnglish(!isEnglish);
+    const newLocale = isEnglish ? 'id' : 'en';
+    router.push(router.pathname, router.asPath, { locale: newLocale });
   };
 
   return (
     <div onClick={toggleLanguage}
-      className="flex items-center justify-between rounded-[11px] h-[23px] w-[47px] border-solid border relative">
-      {/* ANIMATED THIS CIRCLE TO THE RIGHT OR LEFT LIKE A SWITCH BUTTON */}
+      className="flex items-center justify-between rounded-[11px] h-[23px] w-[47px] border-solid border relative cursor-pointer">
       <div className={`absolute z-0 w-[19px] h-[19px] rounded-full bg-white left-[1px] text-[10px] flex items-center justify-center transition-transform duration-300 ${isEnglish ? 'translate-x-[24px]' : 'translate-x-[0px]'}`}></div>
       <div className={`text-[10px] !z-10 ${isEnglish ? 'text-white ml-2' : 'text-black ml-[6px]'}`}>
         ID

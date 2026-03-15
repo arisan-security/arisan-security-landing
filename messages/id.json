@@ -1,0 +1,124 @@
+{
+  "Nav": {
+    "home": "Beranda",
+    "about": "Tentang",
+    "blog": "Blog",
+    "contact": "Kontak"
+  },
+  "Banner": {
+    "welcome": "Selamat datang di Arisan Security!",
+    "close": "Tutup"
+  },
+  "Hero": {
+    "badge": "Arisan Security",
+    "titleLine1": "Pecahkan kode",
+    "titleLine2": "dan bersama",
+    "titleHighlight": "merubah dunia!",
+    "description": "Arisan SECurity (A-SEC) adalah wadah untuk berbicara seputar Information Technology, terkhusus pada bidang Information Technology Security. Kami sangat amat terbuka bagi semua kalangan & Elemen masyarakat untuk bukan hanya sekedar berkolaborasi melainkan berelaborasi.",
+    "learnMore": "Pelajari Selengkapnya",
+    "visitBlog": "Kunjungi blog komunitas"
+  },
+  "Progress": {
+    "cyberCases": "Total permasalahan kasus siber yang kami bantu tangani.",
+    "members": "Total anggota dari sabang sampai merauke.",
+    "awards": "Total penghargaan dari pihak Swasta maupun Pemerintah."
+  },
+  "Shortcut": {
+    "subtitle": "Jalan Pintas",
+    "title": "Informasi Yang Mungkin Kamu Butuhkan",
+    "sawalaMangkusTitle": "Sawala Mangkus",
+    "sawalaMangkusDesc": "Ikut membangun diskusi Teknologi Informasi yang sehat dan positif melalui media dalam jaringan di regu Telegram yang kami sediakan untuk khalayak luas.",
+    "lintasTaksaTitle": "Lintas Taksa",
+    "lintasTaksaDesc": "Menyajikan perspektif singkat aktual dari para pakar praktisi serta pecandu Teknologi Informasi & bidang lain yang terkait, khususnya Keamanan Siber.",
+    "acastTitle": "A-Cast",
+    "acastDesc": "Digital Audio Non-Streaming yang membahas segala sesuatu tentang Teknologi Informasi. Kamu bisa dengar update tentang dunia IT secara komprehensif dimanapun & kapanpun!"
+  },
+  "Blog": {
+    "sectionTitle": "Blog",
+    "title": "Buah Pena Dari Kontributor",
+    "ctaQuestion": "Ingin menjadi kontributor blog kami?",
+    "ctaAction": "Kirim tulisanmu sekarang!",
+    "errorLoading": "Gagal memuat artikel.",
+    "loading": "Memuat artikel...",
+    "nextSlide": "Slide berikutnya",
+    "prevSlide": "Slide sebelumnya"
+  },
+  "Activity": {
+    "title": "Kegiatan Terkini",
+    "ctfTitle": "CTF Dr.WEB 2024",
+    "ctfDesc1": "Dr.WEB kembali mencari bakat terbaik di dunia keamanan siber lho! 🛡",
+    "ctfDesc2": "Ikuti kompetisi Capture The Flag (CTF) dari 2 - 15 Desember 2024 dan buktikan kemampuan kamu dalam reverse engineering & analisis file. 💻",
+    "ctfHowToPlay": "🎯 Cara Bermain:",
+    "ctfChallenge": "Selesaikan 16 tantangan untuk capture the \"flag\" dan kumpulkan poin terbanyak. Pemain tercepat akan mendapatkan poin tambahan!",
+    "ctfPrizes": "🏆 Hadiah:",
+    "ctfPrize1": "🎁 Lisensi Dr.WEB Security Space (1 tahun) untuk semua peserta",
+    "ctfPrize2": "🎁 Hadiah spesial untuk 20 pemain terbaik",
+    "ctfRegistration": "✍️ Pendaftaran sudah dibuka!",
+    "ctfRegisterNow": "Yuk daftar sekarang!",
+    "seeMore": "Lihat selengkapnya"
+  },
+  "Cta": {
+    "title": "Menulis Adalah Jendela Ilmu, dari Segala Ilmu",
+    "question": "Ingin ikut terlibat menjadi kontributor?",
+    "desc1": "Kami menerapkan sistem model Crowdsourcing yang berarti, siapapun bisa berkontribusi kepada platform ini. Dari komunitas untuk komunitas, dari kamu untuk kamu. Setiap tulisan kamu akan dilakukan proses proofreading oleh Redaktur.",
+    "desc2": "Jika tulisan kamu sudah layak memenuhi syarat untuk terbit, kamu akan mendapatkan poin yang berguna untuk memimpin papan Jawara Cendekia layaknya Hall Of Fame.",
+    "submitWriting": "Kirim Tulisan"
+  },
+  "Projects": {
+    "subtitle": "Proyek",
+    "title": "Sorotan Proyek Terbaru Kami Untuk Khayalak Luas",
+    "comingSoon": "Segera Datang~",
+    "comingSoonDesc": "Saat ini proyek masih dalam tahap pengembangan...",
+    "ideaTitle": "ADA SARAN IDE PROYEK MENARIK?",
+    "ideaDesc": "Kalau kamu punya ide kreatif seputar dunia IT, Jangan sungkan kirimkan ide kamu melalui laman \"Kontak\"."
+  },
+  "Collaborator": {
+    "title": "Pernah Berkolaborasi Dengan"
+  },
+  "Footer": {
+    "submitWriting": "Kirim Tulisan",
+    "contactUs": "Hubungi Kami",
+    "pressKit": "Media Press Kit",
+    "privacy": "Kebijakan dan Privasi",
+    "terms": "Syarat dan Ketentuan"
+  },
+  "Seo": {
+    "defaultTitle": "Arisan Security - Komunitas IT Security Indonesia"
+  },
+  "About": {
+    "pageTitle": "Tentang",
+    "whoAreWe": "Siapa Kami?",
+    "whoDesc1": "Kami adalah komunitas nirlaba yang berorientasi pada peradaban Teknologi Informasi, terutama pada bidang Information Technology Security.",
+    "whoDesc2": "Kami melakukan berbagai aktivitas demi menyokong anggota kami untuk bisa berkontribusi dalam siklus ekosistem Teknologi Informasi, khususnya sektor keamanan siber Indonesia secara berkelanjutan.",
+    "napakTilas": "Napak Tilas",
+    "napakDesc1": "Arisan SECurity {A-SEC} adalah wadah untuk berbicara seputar Information Technology, terkhusus pada bidang Information Technology Security. Kami terbuka bagi seluruh lapisan masyarakat untuk bukan hanya sekedar berkolaborasi melainkan berelaborasi.",
+    "napakDesc2": "Information Technology Security adalah aset paling tinggi bagi para pengguna dunia maya (Digital World) guna menyongsong era Industry 5.0 yang sudah sangat amat minim akan privasi. Oleh karena itu vibes \"Security Awareness\" ini harus disosialisasikan serta diedukasikan ke khalayak ramai.",
+    "napakDesc3": "A-SEC lahir di kota Salatiga, yang mana kota strategis ini terkenal dengan sebutan \"Indonesia Mini\". Hal ini dikarenakan banyak pendatang dari Sabang — Merauke Indonesia, datang merantau di kota pelajar ini untuk; Menimba Ilmu, Menitih Karir, Dan lain sebagainya.",
+    "napakDesc4": "Dengan melihat potensi ini, kami sangat optimis dan percaya bahwa A-SEC dapat menyebarkan vibes \"Security Awareness\" diseluruh Indonesia, terutama di daerah 3T (Tertinggal, Terdepan, & Terluar) melalui para anggota kami yang sudah bergabung dalam A-SEC volunteer project serta berproses didalamnya melalui sistem kaderisasi.",
+    "ourPrograms": "Program Kami",
+    "bertumbuhTitle": "BERTumbuh",
+    "bertumbuhDesc": "Saling belajar bersama dalam pengembangan pengetahuan setiap anggota komunitas agar semakin dewasa dalam berpikir komprehensif serta menjadi pribadi yang kompeten di dalam bidang IT terkhususnya IT Security.",
+    "bergerakTitle": "BERgerak",
+    "bergerakDesc": "Memacu kreativitas dan implementasi anggota komunitas dari hasil pertukaran informasi lini digital di bidang IT terkhususnya IT Security, agar terlihat jelas bukti konkret pengaplikasian teori yang didapatkan.",
+    "berdampakTitle": "BERDampak",
+    "berdampakDesc": "Membuahkan dampak positif dari setiap hasil implementasi pergerakan yang dilakukan serta memastikan selalu dapat bermanfaat bagi sesama anggota komunitas, para IT Enthusiast, bahkan sampai ke masyarakat.",
+    "cultureValues": "Budaya & Nilai Yang Kami Percaya"
+  },
+  "Contact": {
+    "title": "Hubungi Kami",
+    "description": "Kami terbuka serta mendukung segala pihak yang ingin bekerjasama dengan kami demi membangun peradaban manusia yang lebih baik, terkhusus dalam dunia Teknologi Informasi & Kemanan Siber.",
+    "portal": "Portal Kami",
+    "nameLabel": "Nama",
+    "namePlaceholder": "Nama lengkap",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Alamat Surel",
+    "phoneLabel": "Nomor Telepon",
+    "phonePlaceholder": "Nomor Telepon",
+    "messageLabel": "Pesan",
+    "messagePlaceholder": "Pesan",
+    "submitting": "Mengirim...",
+    "submit": "Kirim",
+    "success": "Pesan berhasil dikirim!",
+    "error": "Gagal mengirim pesan. Silakan coba lagi."
+  }
+}

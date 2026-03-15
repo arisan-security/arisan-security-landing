@@ -1,7 +1,9 @@
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import LanguageSwitch from "../button/languageSwitch";
+import { useTranslations } from "next-intl";
 
 interface NavigationOverlayProps {
   path: string;
@@ -10,6 +12,7 @@ interface NavigationOverlayProps {
 }
 
 const NavigationOverlay: React.FC<NavigationOverlayProps> = ({ path, showMenu, setShowMenu }) => {
+  const t = useTranslations('Nav');
   const [showContainer, setShowContainer] = React.useState(false);
   React.useEffect(() => {
     setShowContainer(true);
@@ -23,19 +26,16 @@ const NavigationOverlay: React.FC<NavigationOverlayProps> = ({ path, showMenu, s
     <div className="absolute top-0 right-0 w-full bg-black bg-opacity-25 h-screen" onClick={closeContainer}>
       <div className={`w-4/5 bg-dark-blue py-12 text-white h-full ease-in-out flex flex-col gap-8 transform duration-75 p-4 ${showContainer ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className="p-2 hover:bg-blue-500 rounded-xl cursor-pointer">
-          <Link className={`text-xl ${path === "/" ? "text-light-blue px-3 py-2 hover:text-white" : " px-3 py-2"}`} href="/">Beranda</Link>
+          <Link className={`text-xl ${path === "/" ? "text-light-blue px-3 py-2 hover:text-white" : " px-3 py-2"}`} href="/">{t('home')}</Link>
         </div>
         <div className="p-2 hover:bg-blue-500 rounded-xl cursor-pointer">
-          <Link className={`text-xl ${path === "tentang" ? "text-light-blue px-3 py-2 hover:text-white" : " px-3 py-2"}`} href="/tentang">Tentang</Link>
+          <Link className={`text-xl ${path === "tentang" ? "text-light-blue px-3 py-2 hover:text-white" : " px-3 py-2"}`} href="/tentang">{t('about')}</Link>
         </div>
         <div className="p-2 text-white hover:bg-blue-500 rounded-xl cursor-pointer">
-          <Link className="text-xl px-3 py-2" href="https://blog.arisansecurity.id" target="_blank" rel="noopener noreferrer">Blog</Link>
+          <Link className="text-xl px-3 py-2" href="https://blog.arisansecurity.id" target="_blank" rel="noopener noreferrer">{t('blog')}</Link>
         </div>
-        {/* <div className="p-2 text-white hover:bg-blue-500 rounded-xl cursor-pointer">
-          <Link className="text-xl px-3 py-2" href="#">Gudang</Link>
-        </div> */}
         <div className="p-2 text-white hover:bg-blue-500 rounded-xl cursor-pointer">
-          <Link className={`text-xl ${path === "hubungi-kami" ? "text-light-blue px-3 py-2" : "hover:text-blue-300 px-3 py-2"}`} href="/hubungi-kami">Kontak</Link>
+          <Link className={`text-xl ${path === "hubungi-kami" ? "text-light-blue px-3 py-2" : "hover:text-blue-300 px-3 py-2"}`} href="/hubungi-kami">{t('contact')}</Link>
         </div>
       </div>
     </div>
@@ -47,6 +47,9 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ path }) => {
+  const t = useTranslations('Nav');
+  const tb = useTranslations('Banner');
+  const router = useRouter();
   const [showMenu, setShowMenu] = React.useState(false);
   const [showHeader, setShowHeader] = React.useState(true);
   const [showBanner, setShowBanner] = React.useState(true);
@@ -82,10 +85,10 @@ const Header: React.FC<HeaderProps> = ({ path }) => {
             </Link>
           </div>
           <div className="hidden md:flex gap-6 items-center absolute left-1/2 -translate-x-1/2">
-            <Link className={`text-white hover:text-light-blue px-3 py-2 ${path === "/" ? "font-bold" : ""}`} href="/">Beranda</Link>
-            <Link className={`text-white hover:text-light-blue px-3 py-2 ${path === "tentang" ? "font-bold" : ""}`} href="/tentang">Tentang</Link>
-            <Link className="text-white hover:text-light-blue px-3 py-2" href="https://blog.arisansecurity.id" target="_blank" rel="noopener noreferrer">Blog</Link>
-            <Link className={`text-white hover:text-light-blue px-3 py-2 ${path === "hubungi-kami" ? "font-bold" : ""}`} href="/hubungi-kami">Kontak</Link>
+            <Link className={`text-white hover:text-light-blue px-3 py-2 ${path === "/" ? "font-bold" : ""}`} href="/">{t('home')}</Link>
+            <Link className={`text-white hover:text-light-blue px-3 py-2 ${path === "tentang" ? "font-bold" : ""}`} href="/tentang">{t('about')}</Link>
+            <Link className="text-white hover:text-light-blue px-3 py-2" href="https://blog.arisansecurity.id" target="_blank" rel="noopener noreferrer">{t('blog')}</Link>
+            <Link className={`text-white hover:text-light-blue px-3 py-2 ${path === "hubungi-kami" ? "font-bold" : ""}`} href="/hubungi-kami">{t('contact')}</Link>
           </div>
           <div className="hidden md:flex items-center">
             <LanguageSwitch />
@@ -104,8 +107,8 @@ const Header: React.FC<HeaderProps> = ({ path }) => {
       )}
       {showBanner && (
         <div className="bg-light-blue text-white text-center py-2 text-xs md:text-sm">
-          <span>Selamat datang di Arisan Security! {time.toLocaleTimeString("id-ID")}</span>
-          <button className="ml-4 underline" onClick={() => setShowBanner(false)} aria-label="Tutup banner">Tutup</button>
+          <span>{tb('welcome')} {time.toLocaleTimeString(router.locale === 'en' ? 'en-US' : 'id-ID')}</span>
+          <button className="ml-4 underline" onClick={() => setShowBanner(false)} aria-label={tb('close')}>{tb('close')}</button>
         </div>
       )}
     </header>

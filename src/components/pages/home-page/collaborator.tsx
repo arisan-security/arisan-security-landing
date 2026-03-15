@@ -1,5 +1,6 @@
 import Slider from "react-slick";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export interface Collaborator {
   path: string;
@@ -16,11 +17,13 @@ export interface CollaboratorProps {
  * Uses react-slick for carousel. Images are optimized with Next.js Image.
  */
 const Collaborator: React.FC<CollaboratorProps> = ({ settings, collaborators }) => {
+  const t = useTranslations('Collaborator');
+
   return (
     <section className="pt-14 px-8 snap-start">
       <div className="text-center">
         <h2 className="sm:text-lg sm:leading-snug font-semibold tracking-wide uppercase text-purple-600 mb-8">
-          Pernah Berkolaborasi Dengan
+          {t('title')}
         </h2>
         <div>
           <Slider {...settings}>

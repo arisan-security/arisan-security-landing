@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { useTranslations } from "next-intl";
 
 export interface SEOProps {
   title?: string;
@@ -13,16 +14,18 @@ export interface SEOProps {
  * Usage: <SEO title="..." description="..." image="..." article />
  */
 const SEO: React.FC<SEOProps> = ({
-  title = "Arisan Security - Komunitas IT Security Indonesia",
+  title,
   description = "",
   image = "/images/arisansecurity.png",
   article = false,
 }) => {
+  const t = useTranslations('Seo');
   const router = useRouter();
   const siteUrl = process.env.NEXT_PUBLIC_PUBLIC_URL || "https://www.arisansecurity.id/";
   const pathname = router.pathname;
+  const resolvedTitle = title || t('defaultTitle');
   const seo = {
-    title,
+    title: resolvedTitle,
     description,
     image: `${siteUrl}${image}`,
     url: `${siteUrl}${pathname}`,

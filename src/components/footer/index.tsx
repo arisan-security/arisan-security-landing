@@ -1,12 +1,15 @@
 import * as React from "react";
 import Image from "next/image";
 import { FaFacebook, FaInstagram, FaTelegram, FaGithub, FaTwitter, FaLinkedin, FaDiscord, FaYoutube } from 'react-icons/fa';
+import { useTranslations } from "next-intl";
 
 /**
  * Footer component: Arisan Security branding, links, and social icons.
  * All external links open in new tab with rel security.
  */
 const Footer: React.FC = () => {
+  const t = useTranslations('Footer');
+
   return (
     <div className="bg-rich-black border-t-[1px]">
       <div className="!max-w-[1440px] m-auto text-white p-8 md:px-[10%] mx-autorelative">
@@ -15,13 +18,13 @@ const Footer: React.FC = () => {
             <Image src="/images/arisansecurity.png" width={120} height={64} className="object-contain h-8 md:h-16" alt="Logo Arisan SECurity" priority />
           </div>
           <div className="m-4">
-            <a href="#" className="block text-sm mb-2 text-white">Kirim Tulisan</a>
-            <a href="#" className="block text-sm mb-2 text-white">Hubungi Kami</a>
+            <a href="#" className="block text-sm mb-2 text-white">{t('submitWriting')}</a>
+            <a href="#" className="block text-sm mb-2 text-white">{t('contactUs')}</a>
           </div>
           <div className="m-4">
-            <a href="#" className="block text-sm mb-2 text-white">Media Press Kit</a>
-            <a href="#" className="block text-sm mb-2 text-white">Kebijakan dan Privasi</a>
-            <a href="/syarat-dan-ketentuan" className="block text-sm mb-2 text-white">Syarat dan Ketentuan</a>
+            <a href="#" className="block text-sm mb-2 text-white">{t('pressKit')}</a>
+            <a href="#" className="block text-sm mb-2 text-white">{t('privacy')}</a>
+            <a href="/syarat-dan-ketentuan" className="block text-sm mb-2 text-white">{t('terms')}</a>
           </div>
         </div>
         {/* Uncomment and update social links as needed */}

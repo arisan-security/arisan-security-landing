@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import { FaLocationPin } from "react-icons/fa6";
+import { useTranslations } from "next-intl";
 
 interface InstagramPost {
   postId: string;
@@ -12,6 +13,7 @@ interface InstagramPost {
 }
 
 const Activity: React.FC = () => {
+  const t = useTranslations('Activity');
   const [posts, setPosts] = useState<InstagramPost[]>([]);
 
   useEffect(() => {
@@ -43,7 +45,7 @@ const Activity: React.FC = () => {
       <section className="pt-10 px-8 md:px-[10%] max-w-[1440px] 2xl:max-w-[1680px] m-auto snap-start bg-dark-blue" id="activity-section">
         <div className="text-center">
           <h2 className="sm:text-lg sm:leading-snug font-semibold tracking-wide text-white text-[24px] mb-10">
-            Kegiatan Terkini
+            {t('title')}
           </h2>
         </div>
         <div className="special-collaboration pt-5 md:px-16 w-full pb-24 md:w-auto bg-gradient-to-b bg-opacity-20 md:mt-12 md:rounded-[30px] shadow-inner"
@@ -56,7 +58,7 @@ const Activity: React.FC = () => {
             <div className="hidden md:flex flex-col w-[40%] justify-center items-center mb-8 md:mb-0">
               <Image
                 src="/images/ctf-dr-web.jpeg"
-                alt="CTF Dr.WEB 2024"
+                alt={t('ctfTitle')}
                 width={400}
                 height={300}
                 className="w-[80%] h-auto"
@@ -65,20 +67,20 @@ const Activity: React.FC = () => {
             {/* Right Side: Event Explanation */}
             <div className="flex-1 px-8 md:w-[60%]">
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-1">
-                CTF Dr.WEB 2024 
+                {t('ctfTitle')}
               </h2>
               <hr />
               <p className="text-sm mt-4 text-white mb-4 text-justify">
-                Dr.WEB kembali mencari bakat terbaik di dunia keamanan siber lho! 🛡 <br />
-                Ikuti kompetisi Capture The Flag (CTF) dari 2 - 15 Desember 2024 dan buktikan kemampuan kamu dalam reverse engineering & analisis file. 💻 <br /> <br />
-                🎯 Cara Bermain: <br /> <br />
-                Selesaikan 16 tantangan untuk capture the {"\"flag\""} dan kumpulkan poin terbanyak. Pemain tercepat akan mendapatkan poin tambahan! <br /><br />
-                🏆 Hadiah:<br />
-                🎁 Lisensi Dr.WEB Security Space (1 tahun) untuk semua peserta<br />
-                🎁 Hadiah spesial untuk 20 pemain terbaik<br />
-                ✍️ Pendaftaran sudah dibuka! 
+                {t('ctfDesc1')} <br />
+                {t('ctfDesc2')} <br /> <br />
+                {t('ctfHowToPlay')} <br /> <br />
+                {t('ctfChallenge')} <br /><br />
+                {t('ctfPrizes')}<br />
+                {t('ctfPrize1')}<br />
+                {t('ctfPrize2')}<br />
+                {t('ctfRegistration')}{" "}
                 <a href="https://ctf-indonesia.dev.drweb.com" className="text-blue-400 pl-2">
-                  Yuk daftar sekarang!
+                  {t('ctfRegisterNow')}
                 </a>
               </p>
             </div>
@@ -123,7 +125,7 @@ const Activity: React.FC = () => {
                         rel="noopener noreferrer"
                         className="text-blue-500 ml-2"
                       >
-                        See more
+                        {t('seeMore')}
                       </a>
                     )}
                   </p>

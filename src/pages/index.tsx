@@ -7,6 +7,7 @@ import Activity from "@/components/pages/home-page/activity"
 import Cta from "@/components/pages/home-page/cta"
 
 import React, { useEffect } from 'react';
+import type { GetStaticPropsContext } from 'next';
 
 export default function Home() {
   
@@ -50,4 +51,12 @@ export default function Home() {
       <Cta />
     </Page>
   );
+}
+
+export async function getStaticProps(context: GetStaticPropsContext) {
+  return {
+    props: {
+      messages: (await import(`../../messages/${context.locale}.json`)).default,
+    },
+  };
 }
