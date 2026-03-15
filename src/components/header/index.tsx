@@ -1,6 +1,7 @@
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import LanguageSwitch from "../button/languageSwitch";
 import { useTranslations } from "next-intl";
 
@@ -48,6 +49,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ path }) => {
   const t = useTranslations('Nav');
   const tb = useTranslations('Banner');
+  const router = useRouter();
   const [showMenu, setShowMenu] = React.useState(false);
   const [showHeader, setShowHeader] = React.useState(true);
   const [showBanner, setShowBanner] = React.useState(true);
@@ -105,7 +107,7 @@ const Header: React.FC<HeaderProps> = ({ path }) => {
       )}
       {showBanner && (
         <div className="bg-light-blue text-white text-center py-2 text-xs md:text-sm">
-          <span>{tb('welcome')} {time.toLocaleTimeString("id-ID")}</span>
+          <span>{tb('welcome')} {time.toLocaleTimeString(router.locale === 'en' ? 'en-US' : 'id-ID')}</span>
           <button className="ml-4 underline" onClick={() => setShowBanner(false)} aria-label={tb('close')}>{tb('close')}</button>
         </div>
       )}

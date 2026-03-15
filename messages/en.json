@@ -39,7 +39,9 @@
     "ctaQuestion": "Want to become a contributor to our blog?",
     "ctaAction": "Submit your writing now!",
     "errorLoading": "Failed to load articles.",
-    "loading": "Loading articles..."
+    "loading": "Loading articles...",
+    "nextSlide": "Next slide",
+    "prevSlide": "Previous slide"
   },
   "Activity": {
     "title": "Recent Activities",

@@ -71,11 +71,11 @@ const sliderSettings = {
   ],
 };
 
-const SliderArrow: React.FC<{ direction: "next" | "prev"; onClick: () => void }> = ({ direction, onClick }) => (
+const SliderArrow: React.FC<{ direction: "next" | "prev"; onClick: () => void; ariaLabel: string }> = ({ direction, onClick, ariaLabel }) => (
   <button
     onClick={onClick}
     className="block hover:opacity-70 transition-opacity"
-    aria-label={direction === "next" ? "Next slide" : "Previous slide"}
+    aria-label={ariaLabel}
   >
     <svg width="63" height="10" viewBox="0 0 63 10" fill="none">
       {direction === "next" ? (
@@ -143,7 +143,7 @@ const BlogPosts: React.FC = () => {
           <>
             <Slider ref={sliderRef} {...sliderSettings}>
               {posts.map((post, index) => {
-                const imageUrl = post.imageUrl || "/default-image.jpg";
+                const imageUrl = post.imageUrl || "/images/arisansecurity.png";
                 return (
                   <div key={index} className="px-2 py-5">
                     <PostCard
@@ -157,8 +157,8 @@ const BlogPosts: React.FC = () => {
               })}
             </Slider>
             <div className="flex gap-3 mt-4 justify-center">
-              <SliderArrow direction="prev" onClick={() => sliderRef.current?.slickPrev()} />
-              <SliderArrow direction="next" onClick={() => sliderRef.current?.slickNext()} />
+              <SliderArrow direction="prev" onClick={() => sliderRef.current?.slickPrev()} ariaLabel={t('prevSlide')} />
+              <SliderArrow direction="next" onClick={() => sliderRef.current?.slickNext()} ariaLabel={t('nextSlide')} />
             </div>
           </>
         ) : (

@@ -39,7 +39,9 @@
     "ctaQuestion": "Ingin menjadi kontributor blog kami?",
     "ctaAction": "Kirim tulisanmu sekarang!",
     "errorLoading": "Gagal memuat artikel.",
-    "loading": "Memuat artikel..."
+    "loading": "Memuat artikel...",
+    "nextSlide": "Slide berikutnya",
+    "prevSlide": "Slide sebelumnya"
   },
   "Activity": {
     "title": "Kegiatan Terkini",
@@ -53,7 +55,7 @@
     "ctfPrize2": "🎁 Hadiah spesial untuk 20 pemain terbaik",
     "ctfRegistration": "✍️ Pendaftaran sudah dibuka!",
     "ctfRegisterNow": "Yuk daftar sekarang!",
-    "seeMore": "See more"
+    "seeMore": "Lihat selengkapnya"
   },
   "Cta": {
     "title": "Menulis Adalah Jendela Ilmu, dari Segala Ilmu",
