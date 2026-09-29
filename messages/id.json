@@ -45,16 +45,6 @@
   },
   "Activity": {
     "title": "Kegiatan Terkini",
-    "ctfTitle": "CTF Dr.WEB 2024",
-    "ctfDesc1": "Dr.WEB kembali mencari bakat terbaik di dunia keamanan siber lho! 🛡",
-    "ctfDesc2": "Ikuti kompetisi Capture The Flag (CTF) dari 2 - 15 Desember 2024 dan buktikan kemampuan kamu dalam reverse engineering & analisis file. 💻",
-    "ctfHowToPlay": "🎯 Cara Bermain:",
-    "ctfChallenge": "Selesaikan 16 tantangan untuk capture the \"flag\" dan kumpulkan poin terbanyak. Pemain tercepat akan mendapatkan poin tambahan!",
-    "ctfPrizes": "🏆 Hadiah:",
-    "ctfPrize1": "🎁 Lisensi Dr.WEB Security Space (1 tahun) untuk semua peserta",
-    "ctfPrize2": "🎁 Hadiah spesial untuk 20 pemain terbaik",
-    "ctfRegistration": "✍️ Pendaftaran sudah dibuka!",
-    "ctfRegisterNow": "Yuk daftar sekarang!",
     "seeMore": "Lihat selengkapnya"
   },
   "Cta": {
