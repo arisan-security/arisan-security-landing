@@ -1,10 +1,10 @@
 import React, { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import { FaLocationPin } from "react-icons/fa6";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 interface InstagramPost {
-  postId: string;
+  _id: string;
   caption: string;
   imageUrl: string;
   permalink: string;
@@ -12,26 +12,35 @@ interface InstagramPost {
   createdAt: string;
 }
 
+interface FeaturedEvent {
+  title: string;
+  description?: { id?: string; en?: string };
+  link?: string;
+  imageUrl: string;
+}
+
 const Activity: React.FC = () => {
   const t = useTranslations('Activity');
+  const locale = useLocale() as "id" | "en";
   const [posts, setPosts] = useState<InstagramPost[]>([]);
+  const [event, setEvent] = useState<FeaturedEvent | null>(null);
 
   useEffect(() => {
     const controller = new AbortController();
-    const fetchData = async () => {
+    const fetchData = async <T,>(url: string, onData: (data: T) => void) => {
       try {
-        const response = await fetch("/api/instagram", { signal: controller.signal });
+        const response = await fetch(url, { signal: controller.signal });
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
-        const postsData = await response.json();
-        setPosts(postsData);
+        onData(await response.json());
       } catch (error) {
         if (error instanceof Error && error.name === "AbortError") return;
-        console.error("Error fetching Instagram data:", error);
+        console.error(`Error fetching ${url}:`, error);
       }
     };
-    fetchData();
+    fetchData("/api/instagram", setPosts);
+    fetchData("/api/featured-event", setEvent);
     return () => controller.abort();
   }, []);
 
@@ -48,45 +57,43 @@ const Activity: React.FC = () => {
             {t('title')}
           </h2>
         </div>
-        <div className="special-collaboration pt-5 md:px-16 w-full pb-24 md:w-auto bg-gradient-to-b bg-opacity-20 md:mt-12 md:rounded-[30px] shadow-inner"
-          style={{
-            backgroundImage: 'linear-gradient(to bottom, rgba(0, 0, 0, .2) 0%, rgba(0, 0, 0, 0) 78%)',
-          }}
-        >
-          <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center">
-            {/* Left Side: Big Logo */}
-            <div className="hidden md:flex flex-col w-[40%] justify-center items-center mb-8 md:mb-0">
-              <Image
-                src="/images/ctf-dr-web.jpeg"
-                alt={t('ctfTitle')}
-                width={400}
-                height={300}
-                className="w-[80%] h-auto"
-              />
-            </div>
-            {/* Right Side: Event Explanation */}
-            <div className="flex-1 px-8 md:w-[60%]">
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-1">
-                {t('ctfTitle')}
-              </h2>
-              <hr />
-              <p className="text-sm mt-4 text-white mb-4 text-justify">
-                {t('ctfDesc1')} <br />
-                {t('ctfDesc2')} <br /> <br />
-                {t('ctfHowToPlay')} <br /> <br />
-                {t('ctfChallenge')} <br /><br />
-                {t('ctfPrizes')}<br />
-                {t('ctfPrize1')}<br />
-                {t('ctfPrize2')}<br />
-                {t('ctfRegistration')}{" "}
-                <a href="https://ctf-indonesia.dev.drweb.com" className="text-blue-400 pl-2">
-                  {t('ctfRegisterNow')}
-                </a>
-              </p>
+        {event && (
+          <div className="special-collaboration pt-5 md:px-16 w-full pb-24 md:w-auto bg-gradient-to-b bg-opacity-20 md:mt-12 md:rounded-[30px] shadow-inner"
+            style={{
+              backgroundImage: 'linear-gradient(to bottom, rgba(0, 0, 0, .2) 0%, rgba(0, 0, 0, 0) 78%)',
+            }}
+          >
+            <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center">
+              {/* Left Side: Big Logo */}
+              <div className="hidden md:flex flex-col w-[40%] justify-center items-center mb-8 md:mb-0">
+                <Image
+                  unoptimized
+                  src={event.imageUrl}
+                  alt={event.title}
+                  width={400}
+                  height={300}
+                  className="w-[80%] h-auto"
+                />
+              </div>
+              {/* Right Side: Event Explanation */}
+              <div className="flex-1 px-8 md:w-[60%]">
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-1">
+                  {event.title}
+                </h2>
+                <hr />
+                <p className="text-sm mt-4 text-white mb-4 text-justify whitespace-pre-line">
+                  {event.description?.[locale] || event.description?.id}
+                  {event.link && (
+                    <a href={event.link} target="_blank" rel="noopener noreferrer" className="text-blue-400 pl-2">
+                      {t('seeMore')}
+                    </a>
+                  )}
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-4 px-0 mt-[-3rem]">
+        )}
+        <div className={`grid sm:grid-cols-1 md:grid-cols-3 gap-4 px-0 ${event ? "mt-[-3rem]" : ""}`}>
           {sortedPosts.map((post) => {
             const maxLength = 150;
             const truncatedCaption =
@@ -95,7 +102,7 @@ const Activity: React.FC = () => {
                 : post.caption;
             return (
               <div
-                key={post.postId}
+                key={post._id}
                 className="flex flex-col border border-gray-200 rounded-b-none rounded-t-[30px] overflow-hidden shadow-md"
               >
                 <a href={post.permalink} target="_blank" rel="noopener noreferrer">
